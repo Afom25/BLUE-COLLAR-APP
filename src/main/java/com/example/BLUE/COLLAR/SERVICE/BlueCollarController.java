@@ -55,6 +55,17 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 		
 	}
+	@GetMapping("/bluecollarlist")
+	public ModelAndView getBluebluelist() {
+		
+		String viewName = "bluecollarlist";
+		
+		Map<String,Object> model = new HashMap<String,Object>();
+		
+		
+		return new ModelAndView(viewName,model);
+		
+	}
 	
 	
 
