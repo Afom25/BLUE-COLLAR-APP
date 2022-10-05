@@ -16,6 +16,33 @@ public class BlueCollarController {
 	private List<BlueCollarItem> bluelistItems = new ArrayList<BlueCollarItem>();
 	private static int index = 1;
 	
+//	@GetMapping ("/blueForm")
+//	
+//	public ModelAndView showBlueCollarForm() {
+//		String viewName = "blueForm";
+//		
+//		Map<String,Object> model = new HashMap<String,Object>();
+//		model.put("bluecollarItem", new BlueCollarItem());
+//
+//		
+//		return new ModelAndView(viewName,model);
+//		
+//		
+//	}
+	
+	@GetMapping("/bluelistItemForm")
+	public ModelAndView showWatchlistItemForm() {
+		
+		String viewName = "bluelistItemForm";
+		
+		Map<String,Object> model = new HashMap<String,Object>();
+		
+		model.put("watchlistItem", new BlueCollarItem());
+		
+		return new ModelAndView(viewName,model); 
+	}
+	
+	
 	
 	@GetMapping("/service")
 	public ModelAndView getBlueService() {

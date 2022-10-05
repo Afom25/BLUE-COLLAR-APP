@@ -15,6 +15,9 @@ public class BlueCollarItem {
 		this.comment = comment;
 		this.id = id;
 	}
+	public BlueCollarItem() {
+		
+	}
 	public String getTitle() {
 		return title;
 	}
