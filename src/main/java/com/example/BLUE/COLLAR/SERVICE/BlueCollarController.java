@@ -93,10 +93,11 @@ public class BlueCollarController {
 		bluelistItem.setId(index++);
 		bluelistItems.add(bluelistItem);
 		
-		RedirectView redirectView = new RedirectView();
-		redirectView.setUrl("/bluecollarlist");
 		
-		return new ModelAndView(redirectView);
+		RedirectView redirect = new RedirectView();
+		redirect.setUrl("/bluecollarlist");
+		
+		return new ModelAndView(redirect);
 	}
 	@GetMapping("/bluecollarlist")
 	public ModelAndView getBluebluelist() {
