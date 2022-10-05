@@ -12,25 +12,27 @@
 <body>
 	<div class="container">
  		<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
-            <a class = "navbar-brand" href = "homepage-static.html">Watchlist App</a>
+            <a class = "navbar-brand" href = "/">BlueCollar App</a>
             <button class = "navbar-toggler" type = "button" data-toggle = "collapse" 
                data-target = "#navbarSupportedContent" 
                aria-controls = "navbarSupportedContent" aria-expanded = "false" 
                aria-label = "Toggle navigation">
-               
                <span class = "navbar-toggler-icon"></span>
             </button>
             
-            <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+           <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
                <ul class = "navbar-nav mr-auto">
                   <li class = "nav-item">
-                     <a class = "nav-link" href = "homepage-static.html">Home</a>
+                     <a class = "nav-link active" href = "/">HOME</a>
                   </li>
-                  <li class = "nav-item active">
-                     <a class = "nav-link" href = "watchlist-static.html">Watchlist</a>
+                  <li class = "nav-item">
+                     <a class = "nav-link" href = "service"> SERVICE</a>
                   </li>
                   <li class = "nav-item ">
-                     <a class = "nav-link" href = "watchlistItemForm-static.html">Submit an item</a>
+                     <a class = "nav-link" href = "about">ABOUT US</a>
+                  </li>
+                  <li class = "nav-item ">
+                     <a class = "nav-link" href = "contact">CONTACT US</a>
                   </li>
                </ul>
                
@@ -48,32 +50,20 @@
 		        </tr>
 		    </thead>
 			<tbody>
-				<tr>
-		            <td>Avatar</td>
-		            <td>7.8</td>
-		            <td>LOW</td>
-		            <td>Peter recommended</td>
+				<tr th:each="bluelistItem: ${bluelistItems}">
+		            <td th:text="${bluelistItem.title}">Avatar</td>
+		            
+		            <td th:text="${bluelistItem.rating}"> 10</td>
+		            <td th:text="${bluelistItem.priority}">LOW</td>
+		            <td th:text="${bluelistItem.comment}">Peter recommended</td>
 					<td><a href="#" class="btn btn-info" role="button">Update</a></td>
 				</tr>
-				<tr>
-		            <td>Inception</td>
-		            <td>8.7</td>
-		            <td>MEDIUM</td>
-		            <td>YouTube trailer was just awesome!</td>
-					<td><a href="#" class="btn btn-info" role="button">Update</a></td>
-				</tr>
-				<tr>
-		            <td>The Emoji Movie</td>
-		            <td>3.2</td>
-		            <td>HIGH</td>
-		            <td>The boss recommended, have to see it!</td>
-					<td><a href="#" class="btn btn-info" role="button">Update</a></td>
-				</tr>
+				
 			</tbody>
 		</table>
 		<hr/>
 		<div >
-			<div>Number : <span th:text=${numberOfMovies}"> </span></div>	 
+			<div>Number : <span th:text="${numberOfMovies}"> </span></div>	 
 		</div>
 		
 	</div>
