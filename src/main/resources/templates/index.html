@@ -7,6 +7,8 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
+<link rel="stylesheet" href="templates/style.css">
+
 <title>Blue Collar App</title>
 </head>
 
@@ -28,7 +30,7 @@
                      <a class = "nav-link active" href = "index.html">HOME</a>
                   </li>
                   <li class = "nav-item">
-                     <a class = "nav-link" href = "static.html"> SERVICE</a>
+                     <a class = "nav-link" href = "service.html"> SERVICE</a>
                   </li>
                   <li class = "nav-item ">
                      <a class = "nav-link" href = "static.html">ABOUT US</a>
@@ -42,8 +44,117 @@
       	</nav> 
 		<h2  class = "mt-4"> Welcome to the Blue Collar Service application!</h2> <br>
 		<h5 > "IF workers of the world want to win all they have to do is recongnise their own solidarity".</h5>
+		<img src="/src/main/resources/templates/blue.jpeg" alt="blue collar" style="">
+		
+		<div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="service-pic">
+            <img src="blue1.jpeg" width="100px" alt="">
+          </div><br>
+          <h4>client</h4>
+          <p>For our clients we offer door to door services, the services we offer are legitimate because our workers must go through auditions before publishing them tou our site. Your safety is guaranteed for security comes first for us. our
+            workers are Affordable</p>
+
+        </div>
+        <div class="col-md-6">
+          <div class="service-pic">
+            <img src="templates/blue.jpeg" width="100px" alt="">
+          </div><br>
+          <h4>workers</h4>
+          <p>If its been hard for you to find a job, then you are at the right place. Before we publish you to the site we have to first audit you and get to know your work experience before proceeding.Fill the form below to get started</p><br>
+        </div>
+
+      </div>
+      
+      <div class="how-overlay">
+  <a class="btn btn-primary btn-block" id="login-btn2" href="login.html" style="display: none;">Get Services</a>
+          </div>
+          <div id="how-works">
+            <h2>HOW IT WORKS</h2>
+            <ul>
+              <li>create an account if you already dont have one</li>
+              <li>log onto our site</li>
+              <li>you will be directed to our sites services portal</li>
+              <li>select the service you want</li>
+              <li>select your location and the workers available will appear</li>
+              <li>scroll through the page and select the worker you want</li>
+              <li>get there contact and contact them</li>
+            </ul>
+          </div>
 		
 	</div>
+	
+	<div class="container-fluid" id="about-us">
+      <h2>Meet Our Team</h2>
+      <p>The Best formula you can ever mix to come up with the best Webdesign ever
+      </p>
+   
+      <div class="row">
+        <div class="col-md-4">
+          <img src="assets/teamimages/2.png" width="200px" alt="Antenio image" class="rounded-circle teamimages">
+          <h3>Antenio Michael </h3>
+          <p>Software Developer</p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/teamimages/4.png" width="200px" alt="Hidri image" class="rounded-circle teamimages">
+          <h3>Hidri Abraham</h3>
+          <p>Software Developer</p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/teamimages/77.png" width="200px" alt="Daniel image" class="rounded-circle teamimages">
+          <h3>Daniel Iga</h3>
+           <p>Software Developer</p>
+        </div>
+
+      </div>
+      
+      <div class="container-fluid" style="background-color:rgb(0,26,77)" id="contact-us">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <h2>CONTACT US</h2>
+          <p>Feel free to drop a line below</p>
+          <form id="feedback">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" placeholder="Name .." id="name">
+            </div><br>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" placeholder="mail .." id="email">
+            </div><br>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="number" class="form-control" placeholder="Number .." id="phone">
+            </div><br>
+            <div class="form-group">
+              <label for="feedback">Feedback</label>
+              <textarea class="form-control" rows="2" id="feedback" placeholder="feedback ..."></textarea><br>
+            </div>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+          </form>
+      <br><br>
+        </div>
+        <div class="col-md-5 cont-info">
+          <div class="overlay2">
+            <dl class="cont" style="display: none;">
+              <dt> <img src="assets/icons/location.png" width="20px" alt="">Address</dt>
+              <dd> <img src="" alt=""> <small> Ngong Lane Plaza ,3rd floor first room on your right</small></dd><br>
+              <dt> <img src="assets/icons/phone.png" width="20px" alt="">Call us on</dt>
+              <dd> <img src="" alt=""> <small> +254712345678</small></dd><br>
+              <dt> <img src="assets/icons/envelope.png" width="20px" alt="">Customer Care</dt>
+              <dd> <img src="" alt=""> <small> bluecollar@bluecollar.com</small></dd><br>
+            </dl>
+         
+
+        </div>
+        </div>
+      </div>
+      </div>
+
+
+    </div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
