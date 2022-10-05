@@ -7,7 +7,9 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 
@@ -84,19 +86,22 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 		
 	}
+	
+	@PostMapping("/bluelistItemForm")
+	public ModelAndView submitWatchlistItemForm(BlueCollarItem bluelistItem) {
+		
+		bluelistItem.setId(index++);
+		bluelistItems.add(bluelistItem);
+		
+		RedirectView redirectView = new RedirectView();
+		redirectView.setUrl("/bluecollarlist");
+		
+		return new ModelAndView(redirectView);
+	}
 	@GetMapping("/bluecollarlist")
 	public ModelAndView getBluebluelist() {
 		
-		
-		bluelistItems.clear();
-		bluelistItems.add(new BlueCollarItem("Customer1","8.8","Good","Work hard",index++));
-		bluelistItems.add(new BlueCollarItem("Customer2","9","very Good","Cool",index++));
-		bluelistItems.add(new BlueCollarItem("Customer3","10","nice","i like it",index++));
-		bluelistItems.add(new BlueCollarItem("Customer4","6","bad","i dont recommend",index++));
-		
-		
 		String viewName = "bluecollarlist";
-		
 		
 		
 		Map<String,Object> model = new HashMap<String,Object>();
