@@ -40,10 +40,7 @@ public class BlueCollarController {
 		String viewName = "contact";
 		
 		Map<String,Object> model = new HashMap<String,Object>();
-		
-	
-		
-		
+			
 		return new ModelAndView(viewName,model);
 		
 	}
@@ -55,8 +52,6 @@ public class BlueCollarController {
 		Map<String,Object> model = new HashMap<String,Object>();
 		
 		
-		
-	
 		return new ModelAndView(viewName,model);
 		
 	}
