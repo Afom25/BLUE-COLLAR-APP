@@ -1,0 +1,100 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<title>BlueCollar App</title>
+</head>
+
+<body>
+	<div class="container">
+ 		<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
+            <a class = "navbar-brand" href = "/">BlueCollar App</a>
+            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" 
+               data-target = "#navbarSupportedContent" 
+               aria-controls = "navbarSupportedContent" aria-expanded = "false" 
+               aria-label = "Toggle navigation">
+               <span class = "navbar-toggler-icon"></span>
+            </button>
+            
+           <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+               <ul class = "navbar-nav mr-auto">
+                  <li class = "nav-item">
+                     <a class = "nav-link active" href = "/">HOME</a>
+                  </li>
+                  <li class = "nav-item">
+                     <a class = "nav-link" href = "service"> SERVICE</a>
+                  </li>
+                  <li class = "nav-item ">
+                     <a class = "nav-link" href = "about">ABOUT US</a>
+                  </li>
+                  <li class = "nav-item ">
+                     <a class = "nav-link" href = "contact">CONTACT US</a>
+                  </li>
+               </ul>
+               
+            </div>
+      	</nav> 
+		               <h2  class = "mt-4">BlueCollar App</h2>
+		
+		<div class="container-fluid top-s">
+                             <h3>ABOUT US </h3>
+                             
+                             
+                  <div class="container-fluid" style="background-color:rgb(0,26,77)" id="contact-us">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <h2>CONTACT US</h2>
+          <p>Feel free to drop a line below</p>
+          <form id="feedback">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" placeholder="Name .." id="name">
+            </div><br>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" placeholder="mail .." id="email">
+            </div><br>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="number" class="form-control" placeholder="Number .." id="phone">
+            </div><br>
+            <div class="form-group">
+              <label for="feedback">Feedback</label>
+              <textarea class="form-control" rows="2" id="feedback" placeholder="feedback ..."></textarea><br>
+            </div>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+          </form>
+      <br><br>
+        </div>
+        <div class="col-md-5 cont-info">
+          <div class="overlay2">
+            <dl class="cont" style="display: none;">
+              <dt> <img src="assets/icons/location.png" width="20px" alt="">Address</dt>
+              <dd> <img src="" alt=""> <small> Ngong Lane Plaza ,3rd floor first room on your right</small></dd><br>
+              <dt> <img src="assets/icons/phone.png" width="20px" alt="">Call us on</dt>
+              <dd> <img src="" alt=""> <small> +254712345678</small></dd><br>
+              <dt> <img src="assets/icons/envelope.png" width="20px" alt="">Customer Care</dt>
+              <dd> <img src="" alt=""> <small> bluecollar@bluecollar.com</small></dd><br>
+            </dl>
+        
+        </div>
+        </div>
+      </div>
+      </div>
+    
+  </div>
+  
+             
+		
+		
+  </div>
+		<div >
+			<div>Number  <span th:text="${numberOfMovies}"> </div>	 
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
