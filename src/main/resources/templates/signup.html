@@ -1,0 +1,98 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<title>BlueCollar App</title>
+</head>
+
+<body>
+	<div class="container">
+ 		<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
+            <a class = "navbar-brand" href = "/">BlueCollar App</a>
+            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" 
+               data-target = "#navbarSupportedContent" 
+               aria-controls = "navbarSupportedContent" aria-expanded = "false" 
+               aria-label = "Toggle navigation">
+               <span class = "navbar-toggler-icon"></span>
+            </button>
+            
+           <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+               <ul class = "navbar-nav mr-auto">
+                  <li class = "nav-item">
+                     <a class = "nav-link active" href = "/">HOME</a>
+                  </li>
+                  <li class = "nav-item">
+                     <a class = "nav-link" href = "service"> SERVICE</a>
+                  </li>
+                  <li class = "nav-item ">
+                     <a class = "nav-link" href = "about">ABOUT US</a>
+                  </li>
+                  <li class = "nav-item ">
+                     <a class = "nav-link" href = "contact">CONTACT US</a>
+                  </li>
+               </ul>
+               
+            </div>
+      	</nav> 
+
+
+
+
+
+<div class="container-fluid main">
+    <div class=" main overlay2">
+    <div class="container login">
+
+      <img src="assets/logo.png" alt="" width="300px">
+
+      <h3 class="login-heading">Sign Up</h3>
+      <p>Welcome back! Please fill the form to get Services</p>
+      <div class="form">
+
+
+        <form class="target" action="index.html" method="post" style="display: none;">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control email" name="" value="">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control password" name="" value="">
+          </div>
+          <button type="submit" class=" btn btn-primary btn-block" name="button">login</button>
+        </form>
+        <!-- signUp -->
+
+        <form class="target-signUp" action="login" method="post" style="">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control " name="" value="" id="username">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control " name="" value="" id="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control " name="" value="" id="password">
+          </div>
+          <div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input type="password" class="form-control password" name="" value="" id="cpassword">
+          </div>
+          <button type="submit" class=" btn btn-primary btn-block" name="button" id="login"><a href="login">Sign Up</a></button>
+        </form>
+        <br>
+        <div class="signo">
+          <small id="info">Have an Account?</small>
+        </div>
+      </div>
+    </div>
+    <div class="pic">
+      <div class="overlay">
+
+        <h6>If the workers of the world want to win, all they have to do is recognize their own solidarity</h6>
+      </div>
+    </div>
+    </div>
+  </div>

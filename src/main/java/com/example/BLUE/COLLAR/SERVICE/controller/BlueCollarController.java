@@ -1,4 +1,4 @@
-package com.example.BLUE.COLLAR.SERVICE;
+package com.example.BLUE.COLLAR.SERVICE.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.example.BLUE.COLLAR.SERVICE.model.BlueCollarItem;
+
 @Controller
 
 public class BlueCollarController {
@@ -18,19 +20,7 @@ public class BlueCollarController {
 	private List<BlueCollarItem> bluelistItems = new ArrayList<BlueCollarItem>();
 	private static int index = 1;
 	
-//	@GetMapping ("/blueForm")
-//	
-//	public ModelAndView showBlueCollarForm() {
-//		String viewName = "blueForm";
-//		
-//		Map<String,Object> model = new HashMap<String,Object>();
-//		model.put("bluecollarItem", new BlueCollarItem());
-//
-//		
-//		return new ModelAndView(viewName,model);
-//		
-//		
-//	}
+
 	
 	@GetMapping("/bluelistItemForm")
 	public ModelAndView showWatchlistItemForm() {
@@ -42,6 +32,17 @@ public class BlueCollarController {
 		model.put("watchlistItem", new BlueCollarItem());
 		
 		return new ModelAndView(viewName,model); 
+	}
+	@GetMapping("/signup")
+	public ModelAndView getBlueSignUp() {
+		
+		String viewName = "signup";
+		
+		Map<String,Object> model = new HashMap<String,Object>();
+		
+		
+		return new ModelAndView(viewName,model);
+		
 	}
 	
 	

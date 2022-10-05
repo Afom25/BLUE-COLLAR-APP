@@ -1,4 +1,4 @@
-package com.example.BLUE.COLLAR.SERVICE;
+package com.example.BLUE.COLLAR.SERVICE.model;
 
 public class BlueCollarItem {
 	

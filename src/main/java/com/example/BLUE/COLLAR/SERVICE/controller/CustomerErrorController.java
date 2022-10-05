@@ -1,4 +1,4 @@
-package com.example.BLUE.COLLAR.SERVICE;
+package com.example.BLUE.COLLAR.SERVICE.controller;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +21,7 @@ public class CustomerErrorController implements ErrorController {
 	@GetMapping("/error")
 	public ModelAndView handleError(HttpServletResponse response) {
 		int code  = response.getStatus();
-		System.out.println("Error with code" + code + "Happened!");
+		
 		
 		return new ModelAndView("error");
 		
