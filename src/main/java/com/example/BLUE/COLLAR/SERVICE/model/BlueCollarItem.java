@@ -1,6 +1,14 @@
 package com.example.BLUE.COLLAR.SERVICE.model;
 
+
+
+
+
+
+
 public class BlueCollarItem {
+
+
 	
 	private String title;
 	private String rating ;
@@ -16,7 +24,7 @@ public class BlueCollarItem {
 		this.id = id;
 	}
 	public BlueCollarItem() {
-		
+
 	}
 	public String getTitle() {
 		return title;
@@ -48,7 +56,7 @@ public class BlueCollarItem {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	
 	
 
