@@ -130,10 +130,10 @@ public class BlueCollarController {
 		
 	}
 
-	@GetMapping("/bluelocation")
+	@GetMapping("/location")
 	public ModelAndView getBluebluelocation() {
 
-		String viewName = "bluelocation";
+		String viewName = "location";
 
 
 		Map<String,Object> model = new HashMap<String,Object>();
