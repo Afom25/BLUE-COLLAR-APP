@@ -64,6 +64,57 @@
             </div>
             <button type="submit" class="btn btn-primary">SUBMIT</button>
           </form>
+
+
+
+
+
+            <form action="#" method="post" th:action="@{/bluelistItemForm}" th:object="${bluecollarItem}">
+                <h2 class = "mt-4">Submit an item</h2>
+
+                <hr/>
+                <!-- Form levels error messages here -->
+                <div class = "form-group row ">
+                    <div class="col-sm-8">
+                        <span class="text-danger" > </span>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <label for = "name" class = "col-sm-2 col-form-label">FirstName</label>
+
+                        <input type="text" class="form-control" placeholder="Mandatory .." id="name">
+                </div>
+
+                <div class = "form-group">
+                    <label for = "rating" class = "col-sm-2 col-form-label mr-0">LastName</label>
+                    <div class = "col-sm">
+                        <input type = "text"  id ="rating" class =  "form-control" placeholder = "5.0 < Number < 10.0">
+                    </div>
+
+                </div>
+
+                    <div class="form-group">
+                        <label for="priority">Feedback</label>
+                        <textarea class="form-control" rows="2" id="priority" placeholder= "Low|Medium|High"></textarea><br>
+                    </div>
+                <div class = "form-group row">
+                    <label for = "comments" class = "col-sm-2 col-form-label">Comments</label>
+                    <div class = "col-sm-4">
+                        <textarea   id ="comments" class = "form-control" rows = "3" placeholder = "Max. 50 chars"></textarea>
+                    </div>
+                    <div class="col-sm-4">
+
+                    </div>
+                </div>
+
+                <div class = "form-group row">
+                    <div class = "col-sm-10">
+
+                        <button type = "submit" class = "btn btn-primary">Submit</button>
+                    </div>
+                </div>
+
+            </form>
       <br><br>
         </div>
         <div class="col-md-5 cont-info">
@@ -83,13 +134,10 @@
       </div>
     
   </div>
-  
-             
-		
-		
+
   </div>
 		<div >
-			<div> <span th:text="${numberOfMovies}"> </div>	 
+
 		</div>
 	</div>
 
