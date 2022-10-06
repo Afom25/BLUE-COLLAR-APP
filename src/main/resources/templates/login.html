@@ -15,59 +15,32 @@
                aria-label = "Toggle navigation">
                <span class = "navbar-toggler-icon"></span>
             </button>
-            
       	</nav>
-		               <h2  class = "mt-4">BlueCollar App</h2>
-		
 		<div class="container-fluid top-s">
-                             <h3>Login</h3>
-                     <div class="container-fluid main">
+            <div class="container-fluid main">
     <div class=" main overlay2">
     <div class="container login">
-
        <center>  <img th:src="@{/images/logo.png}" alt="" width="300px"> </center>
         <center><h6>If the workers of the world want to win, all they have to do is recognize their own solidarity</h6> </center>
-
       <h3 class="login-heading">Login</h3>
       <p>Welcome back! Please fill the form to get Services</p>
       <div class="form">
-
-
-        <form class="target" action="index.html" method="post">
+        <form class="target" action="service" method="post">
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control email" name="" value="">
+            <input type="text" class="form-control email" name="" value="" id="email">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control password" name="" value="">
+            <input type="password" class="form-control password" name="" value="" id="password">
           </div>
-          <button type="submit" class=" btn btn-primary btn-block" name="button">login</button>
+            <button type="submit" class=" btn btn-black btn-block" name="button" id="login"><a href="service">Login</a></button>
         </form>
-        <!-- signUp -->
 
-        <form class="target-signUp" action="index.html" method="post" style="display: none;">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control " name="" value="" id="username">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control " name="" value="" id="email">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control " name="" value="" id="password">
-          </div>
-          <div class="form-group">
-            <label for="password">Confirm Password</label>
-            <input type="password" class="form-control password" name="" value="" id="cpassword">
-          </div>
-          <button type="submit" class=" btn btn-primary btn-block" name="button">Sign Up</button>
-        </form>
         <br>
-        <div class="signo">
-          <small id="info">Dont  have an account? <br><span class="switch">Sign up</span> </small>
+        <div class="sign">
+            <small id="info">Dont  have an account? <br>  </small>
+            <a href="signup"> <span class="switch">Sign up</span> </a>
         </div>
       </div>
     </div>
@@ -75,14 +48,7 @@
     </div>
     </div>
   </div>
-                             
-                      
-    
   </div>
- 		
-  </div>
-		
-	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
