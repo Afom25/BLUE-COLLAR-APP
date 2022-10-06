@@ -22,11 +22,6 @@ public class BlueCollarController {
 	
 	private List<BlueCollarItem> bluelistItems = new ArrayList<BlueCollarItem>();
 	private static int index = 1;
-	
-
-
-
-
 
 	@PostMapping("/addUser")
 
@@ -79,8 +74,6 @@ public class BlueCollarController {
 		String viewName = "about";
 		
 		Map<String,Object> model = new HashMap<String,Object>();
-		
-		
 		return new ModelAndView(viewName,model);
 		
 	}
@@ -98,8 +91,7 @@ public class BlueCollarController {
 		String viewName = "login";
 		
 		Map<String,Object> model = new HashMap<String,Object>();
-		
-		
+
 		return new ModelAndView(viewName,model);
 		
 	}
@@ -120,29 +112,26 @@ public class BlueCollarController {
 	public ModelAndView getBluebluelist() {
 		
 		String viewName = "bluecollarlist";
-		
-		
 		Map<String,Object> model = new HashMap<String,Object>();
-		
 		model.put("bluelistItems", bluelistItems);
-		
 		return new ModelAndView(viewName,model);
-		
 	}
 
 	@GetMapping("/location")
 	public ModelAndView getBluebluelocation() {
 
 		String viewName = "location";
-
-
 		Map<String,Object> model = new HashMap<String,Object>();
-
-
 		return new ModelAndView(viewName,model);
 
 	}
-	
-	
+
+	@GetMapping("/locationId")
+	public ModelAndView getBluebluelocationId() {
+		String viewName = "locationId";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+
+	}
 
 }
