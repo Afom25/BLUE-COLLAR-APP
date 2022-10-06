@@ -1,24 +1,15 @@
-//package com.example.BLUE.COLLAR.SERVICE.Config;
-//import org.springframework.context.annotation.Configuration;
-//import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-//import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-//import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-//
-//@Configuration
-//@EnableWebMvc
-//public class WebConfig extends WebMvcConfigurerAdapter {
-//
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler(
-//                        "/webjars/**",
-//                        "/images/**",
-//                        "/css/**",
-//                        "/js/**")
-//                .addResourceLocations(
-//                        "classpath:/META-INF/resources/webjars/",
-//                        "classpath:/static/img/",
-//                        "classpath:/static/css/",
-//                        "classpath:/static/js/");
-//    }
-//}
+package com.example.BLUE.COLLAR.SERVICE.Config;
+
+import org.springframework.boot.autoconfigure.graphql.reactive.GraphQlWebFluxAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
+
+import java.net.http.WebSocket;
+
+
+@Configuration
+
+
+
+public class WebConfig  {
+
+}
