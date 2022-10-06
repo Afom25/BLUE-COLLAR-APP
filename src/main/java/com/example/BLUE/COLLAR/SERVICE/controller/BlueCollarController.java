@@ -62,9 +62,7 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 		
 	}
-	
-	
-	
+
 	@GetMapping("/service")
 	public ModelAndView getBlueService() {
 		
@@ -130,6 +128,19 @@ public class BlueCollarController {
 		
 		return new ModelAndView(viewName,model);
 		
+	}
+
+	@GetMapping("/bluelocation")
+	public ModelAndView getBluebluelocation() {
+
+		String viewName = "bluelocation";
+
+
+		Map<String,Object> model = new HashMap<String,Object>();
+
+
+		return new ModelAndView(viewName,model);
+
 	}
 	
 	
