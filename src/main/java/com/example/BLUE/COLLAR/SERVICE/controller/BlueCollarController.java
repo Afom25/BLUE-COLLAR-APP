@@ -128,13 +128,4 @@ public class BlueCollarController {
 
 	}
 
-	@GetMapping("/home")
-	public String HomeController(){
-		return "this is home page to check";
-	}
-	@GetMapping("/admin")
-	public String admin(){
-		return "this is admin page";
-	}
-
 }
