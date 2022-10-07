@@ -1,18 +1,49 @@
-const name = document.getElementById('name')
-const password = document.getElementById("password")
 const form = document.getElementById('form')
+const name = document.getElementById('firstname')
+const password = document.getElementById("lastname")
+const email = document.getElementById("email")
+const password = document.getElementById("password")
+const cpassword = document.getElementById("cpassword")
+
+
 
 form.addEventListener('submit',(e) =>{
-    let messages = []
+    e.preventDefault();
+    checkInputs();
+});
 
-    if(name.value == '' || name.value == null){
-        messages.push('Name is requried')
+function checkInputs(){
+    const firstnameValue = firstname.value.trime();
+    const lastnameValue = lastname.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const cpasswordValue = cpassword.value.trim();
+
+    if(firstnameValue === ''){
+        setErrorFor(firstname , 'firstname cannot be blank')
+    }else {
+        setSuccessFor(firstname);
+
     }
-    if (password.value.length <= 6){
-        messages.push('Password must be longer that 6 characters')
+    if(lastnameValue === ''){
+        setErrorFor(lastname , 'firstname cannot be blank')
+    }else {
+        setSuccessFor(lastname);}
+
+        function setErrorFor(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+
+            small.innerText = message;
+
+            formControl.className = 'Form-control error';
+        }
+
+        function setSuccessFor(input) {
+            const formControl = input.parentElement;
+            formControl.className = 'form-control success';
+        }
+
+
     }
-    if(messages.length > 0){
-        e.preventDefault()
-        errorElement.innerText = messages.join(',')
-    }
-})
+

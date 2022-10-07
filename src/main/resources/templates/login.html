@@ -25,7 +25,7 @@
       <h3 class="login-heading">Login</h3>
       <p>Welcome back! Please fill the form to get Services</p>
       <div class="form">
-        <form class="target" action="service" method="post">
+          <form action="service" th:action="@{/service}">
           <div class="form-group">
             <label for="email">Email</label>
             <input type="text" class="form-control email" name="" value="" id="email">
@@ -34,7 +34,7 @@
             <label for="password">Password</label>
             <input type="password" class="form-control password" name="" value="" id="password">
           </div>
-            <button type="submit" class=" btn btn-black btn-block" name="button" id="service"><a href="service">Login</a></button>
+            <button type="submit" class=" btn btn-black btn-block" name="" id="service"><a href="service">Login</a></button>
         </form>
 
         <br>
