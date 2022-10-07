@@ -92,14 +92,11 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 		
 	}
-	
 	@PostMapping("/bluelistItemForm")
 	public ModelAndView submitWatchlistItemForm(BlueCollarItem bluelistItem) {
 		
 		bluelistItem.setId(index++);
 		bluelistItems.add(bluelistItem);
-		
-		
 		RedirectView redirect = new RedirectView();
 		redirect.setUrl("/bluecollarlist");
 		
@@ -129,6 +126,15 @@ public class BlueCollarController {
 		Map<String,Object> model = new HashMap<String,Object>();
 		return new ModelAndView(viewName,model);
 
+	}
+
+	@GetMapping("/home")
+	public String HomeController(){
+		return "this is home page to check";
+	}
+	@GetMapping("/admin")
+	public String admin(){
+		return "this is admin page";
 	}
 
 }

@@ -42,10 +42,10 @@
 		<table class="table">
 			<thead class = "thead-light">
 		        <tr>
-		            <th class="text-left">Title</th>
-		            <th class="text-left">Rating</th>
-		            <th class="text-left">Priority</th>
-		            <th class="text-left">Comment</th>
+		            <th class="text-left"></th>
+		            <th class="text-left"></th>
+		            <th class="text-left"></th>
+		            <th class="text-left"></th>
 		            <th class="text-left"></th>
 		        </tr>
 		    </thead>
@@ -56,15 +56,13 @@
 		            <td th:text="${bluelistItem.rating}"> 10</td>
 		            <td th:text="${bluelistItem.priority}">LOW</td>
 		            <td th:text="${bluelistItem.comment}">Peter recommended</td>
-					<td><a href="#" class="btn btn-info" role="button">Update</a></td>
+					<td><a href="#" class="btn btn-info" role="button">✅</a></td>
 				</tr>
 				 
 			</tbody>
 		</table>
 		<hr/>
-		<div >
-			<div>Number : <span th:text="${numberOfMovies}"> </span></div>	 
-		</div>
+
 		
 	</div>
 

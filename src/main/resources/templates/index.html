@@ -42,14 +42,14 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4"><br>
-                    <h5 class="text-white">Feel free to subscribe for more details</h5>
+                    <h5 class="text-black">Feel free to subscribe for more details</h5>
                     <form class="sub" action="index.html" method="post">
-                        <div class="fomr-group">
-                            <label class="text-white" > <small>Names</small> </label>
+                        <div class="form-group">
+                            <label class="text-black" > FullName </label>
                             <input type="text" class="form-control" name="" value="" id="name">
                         </div>
-                        <div class="fomr-group">
-                            <label class="text-white" > <small>Email</small> </label>
+                        <div class="form-group">
+                            <label class="text-black" > Email </label>
                             <input type="email" class="form-control" name="" value="" id="email">
                         </div><br>
                         <button type="submit" class="btn btn-primary" name="button">Subscribe</button>
@@ -57,16 +57,15 @@
                     <div class="icons">
                         <img src="/images/facebook.png" alt="">
                         <img src="/images/g_plus.png" alt="">
-                        <img src="/iamges/skype.png" alt="">
+                        <img src="/images/skype.png" alt="">
                         <img src="/images/twitter.png" alt="">
                         <img src="/images/you_tube.png" alt="">
-
+                        <button type="button" onclick="my_button_click_handler">Click this button</button>
                     </div>
                 </div>
-
             </div>
         </div>
-
+    </div>
     </div>
 
 
@@ -74,6 +73,13 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        function my_button_click_handler()
+        {
+            alert('Button Clcked');
+        }
+    </script>
+
 
 </body>
 </html>
