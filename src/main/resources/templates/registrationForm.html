@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Employee</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+<body>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h2>Registration</h2>
+      <form th:action="@{/registrationForm}" th:object="${bluecollarItem}" method="post">
+<!--        <form action="" method="post" th:action="@{/bluelistItemForm}" th:object="${bluecollarItems}">-->
+          <h2 class = "mt-4"> Post Job</h2>
+
+          <hr/>
+
+          <div class = "form-group row ">
+            <div class="col-sm-8">
+              <span class="text-danger" > </span>
+            </div>
+          </div>
+          <div class = "form-group row ">
+            <label for = "title" class = "col-sm-2 col-form-label">User</label>
+            <div class = "col-sm-4">
+              <input type = "text" class = "form-control" placeholder = "" id="title">
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+          </div>
+
+          <div class = "form-group row ">
+            <label for = "rating" class = "col-sm-2 col-form-label mr-0"> Job title </label>
+            <div class = "col-sm-4">
+              <input type = "text"  id ="rating" class =  "form-control" placeholder = "">
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+          </div>
+
+          <div class = "form-group row ">
+            <label for = "priority" class = "col-sm-2 col-form-label mr-0"> Location</label>
+            <div class = "col-sm-4">
+              <input    type = "text"  id ="priority" class = "form-control" placeholder = "">
+            </div>
+          </div>
+          <div class = "form-group row">
+            <label for = "comments" class = "col-sm-2 col-form-label">Telephone</label>
+            <div class = "col-sm-4">
+              <input    type = "text"  id ="comments" class = "form-control" placeholder = "">
+            </div>
+          </div>
+          <div class = "form-group row">
+            <div class = "col-sm-10">
+
+              <button type = "submit" class = "btn btn-primary">Submit</button>
+            </div>
+          </div>
+
+        </form>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(function() {
+    $("#join_datepicker").datepicker({dateFormat:"yy-mm-dd"});
+    $("#retire_datepicker").datepicker({dateFormat:"yy-mm-dd"});
+  });
+</script>
+</body>
+</html>

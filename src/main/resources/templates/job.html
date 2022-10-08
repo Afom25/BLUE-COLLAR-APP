@@ -1,0 +1,92 @@
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="templates/style.css">
+
+    <title>Blue Collar App</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="container-fluid" id="about-us">
+        <center > <h>Meet Our Team Expert</h></center>
+        <center> <img th:src="@{/images/logo.png}" alt="" width="300px"></center>
+        <center><h4>If the workers of the world want to win, all they have to do is recognize their own solidarity</h4></center>
+
+
+        <div class="row">
+            <div class="col-md-4">
+            </div><br/><br/>
+
+            <div class="col-md-4">
+                <img src="/images/blue2.jpeg" width="400px" alt="blue image" class="rounded-circle teamimages">
+                <h3>BLUE COLLAR APP</h3>
+                <li>
+                    <a href="signup"> <button type="submit" class="btn btn-black" id="signup"> Sign Up </button> </a>
+                </li>
+                <hr/>
+                <li>
+                    <a href="login"><button type="submit" class="btn btn-black" id="signupp">Login</button></a>
+                </li>
+            </div>
+            <div class="col-md-4">
+                <form action="" method="post" th:action="@{/bluelistItemForm}" th:object="${job}">
+                    <input id="user" placeholder="Enter First Name" required type="text" th:field="*{user}"/>
+                    <input id="jobTitle" placeholder="Enter Last Name" required type="text" th:field="*{jobTitle}"/>
+                    <input id="location" placeholder="Enter First Name" required type="text" th:field="*{location}"/>
+                    <input id="telephone" placeholder="Enter Last Name" required type="text" th:field="*{telephone}"/>
+                    <input type="submit" value="Create User">
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid final-top">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><br>
+                    <h5 class="text-black">Feel free to subscribe for more details</h5>
+                    <form class="sub" action="subscribed" method="post">
+                        <div class="form-group">
+                            <label class="text-black" > FullName </label>
+                            <input type="text" class="form-control" name="" value="" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-black" > Email </label>
+                            <input type="email" class="form-control" name="" value="" id="email">
+                        </div><br>
+                        <a href="login"><button type="submit" class="btn btn-primary" name="button">Subscribe</button></a>
+                    </form><br/>
+                    <div>
+                        <a th:href="@{/registrationForm}">Go to bluecollarItem</a>
+
+                    </div>
+                    <div class="icons">
+                        <img src="/images/facebook.png" alt="">
+                        <img src="/images/g_plus.png" alt="">
+                        <img src="/images/skype.png" alt="">
+                        <img src="/images/twitter.png" alt="">
+                        <img src="/images/you_tube.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

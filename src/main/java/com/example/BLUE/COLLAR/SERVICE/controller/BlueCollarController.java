@@ -8,21 +8,28 @@ import java.util.Map;
 //import com.example.BLUE.COLLAR.SERVICE.repository.BlueRepository;
 
 import com.example.BLUE.COLLAR.SERVICE.model.ChatMessage;
+import com.example.BLUE.COLLAR.SERVICE.model.Job;
+import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.BLUE.COLLAR.SERVICE.model.BlueCollarItem;
 
+
+
 @RestController
 
 public class BlueCollarController {
 	
 	private List<BlueCollarItem> bluelistItems = new ArrayList<BlueCollarItem>();
+	private List<Job> jobs=new ArrayList<>();
+
 	private static int index = 1;
 
 
@@ -86,15 +93,50 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 
 	}
+//	@PostMapping("/bluelistItemForm")
+//	public ModelAndView submitWatchlistItemForm(BlueCollarItem bluelistItem) {
+//
+//		bluelistItem.setId(index++);
+//		bluelistItems.add(bluelistItem);
+//		RedirectView redirect = new RedirectView();
+//		redirect.setUrl("/bluecollarlist");
+//
+//		return new ModelAndView(redirect);
+//	}
+//	@PostMapping("/bluelistItemForm")
+//	public ModelAndView submitBLue(){
+//
+//		String viewName = "bluecollarlist";
+//		Map<String,Object> model = new HashMap<String,Object>();
+//		return new ModelAndView(viewName,model);
+//
+//	}
+
+
+
+	@RequestMapping("/job")
+	public ModelAndView getJob(Model model) {
+
+		String viewName = "job";
+
+		Job job=new Job();
+
+		model.addAttribute("job",job);
+
+		return new ModelAndView(viewName);
+
+	}
+
 	@PostMapping("/bluelistItemForm")
-	public ModelAndView submitWatchlistItemForm(BlueCollarItem bluelistItem) {
+	public ModelAndView  handleForm( Job job,Model model) {
 
-		bluelistItem.setId(index++);
-		bluelistItems.add(bluelistItem);
-		RedirectView redirect = new RedirectView();
-		redirect.setUrl("/bluecollarlist");
-
-		return new ModelAndView(redirect);
+       System.out.println(job.toString());
+	   jobs.add(job);
+		String viewName = "bluelistItemForm";
+		//Map<String,Object> model = new HashMap<String,Object>();
+		//model.put("bluelistItems", new BlueCollarItem());
+		model.addAttribute("listjob",jobs);
+		return new ModelAndView(viewName);
 	}
 	@GetMapping("/bluecollarlist")
 	public ModelAndView getBluebluelist() {
@@ -130,6 +172,23 @@ public class BlueCollarController {
 		redirect.setUrl("/login");
 
 		return new ModelAndView(redirect);
+	}
+	@GetMapping("/registrationForm")
+	public ModelAndView showRegsistration(){
+
+
+		String viewName = "registrationForm";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+
+
+	}
+	@PostMapping("/registrationForm")
+	public ModelAndView saveBlueCollarItem(){
+		String viewName = "displayform";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+
 	}
 
 	@MessageMapping("/chat.sendMessage")
