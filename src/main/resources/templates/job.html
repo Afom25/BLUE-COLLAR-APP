@@ -39,6 +39,10 @@
                 <li class = "nav-item ">
                     <a class = "nav-link" href = "contact">CONTACT US</a>
                 </li>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </ul>
 
         </div>
@@ -47,7 +51,49 @@
         <center > <h>Meet Our Team Expert</h></center>
         <center> <img th:src="@{/images/logo.png}" alt="" width="300px"></center>
         <center><h4>If the workers of the world want to win, all they have to do is recognize their own solidarity</h4></center>
+        <div class="container">
+            <table class="table">
+                <thead class = "thead-light">
+                <tr>
+                    <th class="text-left">User 👤</th>
+                    <th class="text-left">Job title ☑</th>
+                    <th class="text-left">Location 📍</th>
+                    <th class="text-left">Telephone ☎</th>
+                    <th class="text-left">Posted Date 📅</th>
+                    <th class="text-left">Apply Job 🧑‍💼 </th>
 
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>User1</td>
+                    <td> Plumber </td>
+                    <td > Iowa,FA</td>
+                    <td>012345678</td>
+                    <td>10/25/2022</td>
+                    <td><a href="registrationForm" class="btn btn-info" role="button"> Apply✅</a></td>
+                </tr>
+                <tr>
+                    <td>Hidri</td>
+                    <td> Welder </td>
+                    <td > Ottuma,IA</td>
+                    <td>1645464789</td>
+                    <td>10/24/2022</td>
+                    <td><a href="registrationForm" class="btn btn-info" role="button"> Apply✅</a></td>
+                </tr>
+                <tr th:each="jobb: ${listjob}">
+                    <td >[[${jobb.user}]]</td>
+                    <td >[[${jobb.jobTitle}]]</td>
+                    <td >[[${jobb.location}]]</td>
+                    <td >[[${jobb.telephone}]]</td>
+                    <td >[[${jobb.datepost}]]</td>
+                    <td><a href="registrationForm" class="btn btn-info" role="button">Apply✅</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+            <hr/>
+        </div>
         <div class="row">
 
 
