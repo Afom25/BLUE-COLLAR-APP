@@ -8,17 +8,20 @@ public class Job {
     private String location;
     private String telephone;
 
+    private String datepost;
+
 
     public Job(){
 
     }
 
-    public Job(Long id, String user, String jobTitle, String location, String telephone) {
+    public Job(Long id, String user, String jobTitle, String location, String telephone,String datepost) {
         this.id = id;
         this.user = user;
         this.jobTitle = jobTitle;
         this.location = location;
         this.telephone = telephone;
+        this.datepost = datepost;
     }
 
     public Long getId() {
@@ -39,6 +42,14 @@ public class Job {
 
     public String getJobTitle() {
         return jobTitle;
+    }
+
+    public String getDatepost() {
+        return datepost;
+    }
+
+    public void setDatepost(String datepost) {
+        this.datepost = datepost;
     }
 
     public void setJobTitle(String jobTitle) {

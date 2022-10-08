@@ -8,7 +8,7 @@
    <body>
       <div class = "container">
           <nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
-              <a class = "navbar-brand" href = "/static">BlueCollar App</a>
+              <a class = "navbar-brand" href = "/">BlueCollar App</a>
               <button class = "navbar-toggler" type = "button" data-toggle = "collapse"
                       data-target = "#navbarSupportedContent"
                       aria-controls = "navbarSupportedContent" aria-expanded = "false"
@@ -41,11 +41,13 @@
           <table class="table">
               <thead class = "thead-light">
               <tr>
-                  <th class="text-left">User</th>
-                  <th class="text-left">Job title</th>
-                  <th class="text-left">Location </th>
-                  <th class="text-left">Telephone</th>
-                  <th class="text-left">Posted Date</th>
+                  <th class="text-left">User 👤</th>
+                  <th class="text-left">Job title ☑</th>
+                  <th class="text-left">Location 📍</th>
+                  <th class="text-left">Telephone ☎</th>
+                  <th class="text-left">Posted Date 📅</th>
+                  <th class="text-left">Apply Job 🧑‍💼 </th>
+
               </tr>
               </thead>
               <tbody>
@@ -62,7 +64,7 @@
                   <td >[[${jobb.jobTitle}]]</td>
                   <td >[[${jobb.location}]]</td>
                   <td >[[${jobb.telephone}]]</td>
-                  <td ></td>
+                  <td >[[${jobb.datepost}]]</td>
                   <td><a href="registrationForm" class="btn btn-info" role="button">Apply✅</a></td>
               </tr>
 
@@ -71,62 +73,146 @@
           <hr/>
       </div>
          
-           <form action="" method="post" th:action="@{/bluelistItemForm}" >
-            <h2 class = "mt-4"> Post Job</h2>
+<!--           <form action="" method="post" th:action="@{/bluelistItemForm}" >-->
+<!--            <h2 class = "mt-4"> Post Job</h2>-->
 
-            <hr/>
+<!--            <hr/>-->
 
-            <div class = "form-group row ">
-               <div class="col-sm-8">
-        			<span class="text-danger" > </span>      
-      			</div>
-            </div>
-            <div class = "form-group row ">
-               <label for = "title" class = "col-sm-2 col-form-label">User</label>
-               <div class = "col-sm-4">
-                  <input type = "text" class = "form-control" placeholder = "" id="title">
-               </div>
-               <div class="col-sm-4">
-        
-      			</div>
-            </div>
-            
-            <div class = "form-group row ">
-               <label for = "rating" class = "col-sm-2 col-form-label mr-0"> Job title </label>
-               <div class = "col-sm-4">
-                  <input type = "text"  id ="rating" class =  "form-control" placeholder = "">
-               </div>
-               <div class="col-sm-4">
-        			
-      			</div>
-            </div>
-               
-            <div class = "form-group row ">
-               <label for = "priority" class = "col-sm-2 col-form-label mr-0"> Location</label>
-               <div class = "col-sm-4">
-                  <input    type = "text"  id ="priority" class = "form-control" placeholder = "">
-               </div>
-            </div>
-            <div class = "form-group row">
-            	<label for = "comments" class = "col-sm-2 col-form-label">Telephone</label>
-            	<div class = "col-sm-4">
-                    <input    type = "text"  id ="comments" class = "form-control" placeholder = "">
-               </div>
-            </div>
-               <div class = "form-group row">
-                   <label for = "datepost" class = "col-sm-2 col-form-label">Telephone</label>
-                   <div class = "col-sm-4">
-                       <input    type = "text"  id ="datepost" class = "form-control" placeholder = "">
-                   </div>
-               </div>
-            <div class = "form-group row">
-               <div class = "col-sm-10">
-                
-                  <button type = "submit" class = "btn btn-primary">Submit</button>
-               </div>            
-            </div>
-            
-         </form>
+<!--            <div class = "form-group row ">-->
+<!--               <div class="col-sm-8">-->
+<!--        			<span class="text-danger" > </span>      -->
+<!--      			</div>-->
+<!--            </div>-->
+<!--            <div class = "form-group row ">-->
+<!--               <label for = "title" class = "col-sm-2 col-form-label">User</label>-->
+<!--               <div class = "col-sm-4">-->
+<!--                  <input type = "text" class = "form-control" placeholder = "" id="title">-->
+<!--               </div>-->
+<!--               <div class="col-sm-4">-->
+<!--        -->
+<!--      			</div>-->
+<!--            </div>-->
+<!--            -->
+<!--            <div class = "form-group row ">-->
+<!--               <label for = "rating" class = "col-sm-2 col-form-label mr-0"> Job title </label>-->
+<!--               <div class = "col-sm-4">-->
+<!--                  <input type = "text"  id ="rating" class =  "form-control" placeholder = "">-->
+<!--               </div>-->
+<!--               <div class="col-sm-4">-->
+<!--        			-->
+<!--      			</div>-->
+<!--            </div>-->
+<!--               -->
+<!--            <div class = "form-group row ">-->
+<!--               <label for = "priority" class = "col-sm-2 col-form-label mr-0"> Location</label>-->
+<!--               <div class = "col-sm-4">-->
+<!--                  <input    type = "text"  id ="priority" class = "form-control" placeholder = "">-->
+<!--               </div>-->
+<!--            </div>-->
+<!--            <div class = "form-group row">-->
+<!--            	<label for = "comments" class = "col-sm-2 col-form-label">Telephone</label>-->
+<!--            	<div class = "col-sm-4">-->
+<!--                    <input    type = "text"  id ="comments" class = "form-control" placeholder = "">-->
+<!--               </div>-->
+<!--            </div>-->
+<!--               <div class = "form-group row">-->
+<!--                   <label for = "datepost" class = "col-sm-2 col-form-label">Telephone</label>-->
+<!--                   <div class = "col-sm-4">-->
+<!--                       <input    type = "text"  id ="datepost" class = "form-control" placeholder = "">-->
+<!--                   </div>-->
+<!--               </div>-->
+<!--            <div class = "form-group row">-->
+<!--               <div class = "col-sm-10">-->
+<!--                -->
+<!--                  <button type = "submit" class = "btn btn-primary">Submit</button>-->
+<!--               </div>            -->
+<!--            </div>-->
+<!--            -->
+<!--         </form>-->
+
+      <div class="row">
+
+          <div class="col-md-2">
+
+          </div>
+          <div class="col-md-4">
+              <img src="/images/blue3.jpeg" width="400px" alt="blue image" class="rounded-circle teamimages">
+              <h3>BLUE COLLAR APP</h3>
+          </div>
+
+
+          <div class="col-md-6">
+              <form action="" method="post" th:action="@{/bluelistItemForm}" th:object="${job}">
+                  <h2 class = "mt-4"> Post Job</h2>
+                  <hr/>
+                  <div class = "form-group row ">
+                      <div class="col-sm-8">
+                          <span class="text-danger" > </span>
+                      </div>
+                  </div>
+                  <div class = "form-group row ">
+                      <label  for = "user" class = "col-sm-2 col-form-label">User 👤</label>
+                      <div class = "col-sm-4">
+                          <input id="user" placeholder="" required type="text" th:field="*{user}"/>
+
+                      </div>
+                      <div class="col-sm-4">
+
+                      </div>
+                  </div>
+
+                  <div class = "form-group row ">
+                      <label for = "jobTitle" class = "col-sm-2 col-form-label mr-0"> Job title </label>
+                      <div class = "col-sm-4">
+                          <input id="jobTitle" placeholder="" required type="text" th:field="*{jobTitle}"/>
+
+                      </div>
+                      <div class="col-sm-4">
+
+                      </div>
+                  </div>
+
+                  <div class = "form-group row ">
+                      <label for = "location" class = "col-sm-2 col-form-label mr-0"> Location </label>
+                      <div class = "col-sm-4">
+                          <input id="location" placeholder="" required type="text" th:field="*{location}"/>
+
+                      </div>
+                  </div>
+                  <div class = "form-group row">
+                      <label for = "telephone" class = "col-sm-2 col-form-label">Telephone ️</label>
+                      <div class = "col-sm-4">
+                          <input id="telephone" placeholder="" required type="text" th:field="*{telephone}"/>
+
+                      </div>
+                  </div>
+                  <div class = "form-group row">
+                      <label for = "datepost" class = "col-sm-2 col-form-label">Date Posted  </label>
+                      <div class = "col-sm-4">
+                          <input id="datepost" placeholder="" required type="text" th:field="*{datepost}"/>
+
+                      </div>
+                  </div>
+                  <div class = "form-group row">
+                      <div class = "col-sm-10">
+
+                          <button type = "submit" class = "btn btn-primary">Submit</button>
+                      </div>
+                  </div>
+
+              </form><br/><br/>
+              <div class="icons">
+                  <img src="/images/facebook.png" alt="">
+                  <img src="/images/g_plus.png" alt="">
+                  <img src="/images/skype.png" alt="">
+                  <img src="/images/twitter.png" alt="">
+                  <img src="/images/you_tube.png" alt="">
+
+              </div>
+          </div>
+
+      </div>
+
       </div>
       
     
