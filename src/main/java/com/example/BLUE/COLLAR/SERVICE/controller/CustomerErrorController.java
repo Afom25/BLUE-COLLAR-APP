@@ -1,6 +1,5 @@
 package com.example.BLUE.COLLAR.SERVICE.controller;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
