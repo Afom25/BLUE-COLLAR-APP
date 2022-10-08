@@ -5,9 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
+@Entity
 public class Job {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String user;
     private String jobTitle;
@@ -20,14 +21,13 @@ public class Job {
     public Job(){
 
     }
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public Long getIg(){
         return id;
     }
 
-    public Job(Long id, String user, String jobTitle, String location, String telephone,String datepost) {
-        this.id = id;
+    public Job(String user, String jobTitle, String location, String telephone,String datepost) {
+
         this.user = user;
         this.jobTitle = jobTitle;
         this.location = location;

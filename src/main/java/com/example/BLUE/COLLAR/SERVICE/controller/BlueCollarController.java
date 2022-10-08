@@ -8,6 +8,8 @@ import java.util.Map;
 //import com.example.BLUE.COLLAR.SERVICE.repository.BlueRepository;
 
 import com.example.BLUE.COLLAR.SERVICE.model.Job;
+import com.example.BLUE.COLLAR.SERVICE.service.JobService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,7 +22,8 @@ import com.example.BLUE.COLLAR.SERVICE.model.BlueCollarItem;
 @RestController
 
 public class BlueCollarController {
-	
+	@Autowired
+	private JobService service;
 	private List<BlueCollarItem> bluelistItems = new ArrayList<BlueCollarItem>();
 	private List<Job> jobs=new ArrayList<>();
 
@@ -41,6 +44,10 @@ public class BlueCollarController {
 		Map<String,Object> model = new HashMap<String,Object>();
 		return new ModelAndView(viewName,model);
 		
+	}
+	@PostMapping("/add/job")
+	public Job save(@RequestBody Job job){
+		return service.save(job);
 	}
 
 	@RequestMapping("/service")
@@ -130,6 +137,7 @@ public class BlueCollarController {
 		//Map<String,Object> model = new HashMap<String,Object>();
 		//model.put("bluelistItems", new BlueCollarItem());
 		model.addAttribute("listjob",jobs);
+		service.save(job);
 		return new ModelAndView(viewName);
 	}
 	@GetMapping("/bluecollarlist")
