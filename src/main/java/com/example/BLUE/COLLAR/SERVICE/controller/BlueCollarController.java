@@ -25,37 +25,19 @@ public class BlueCollarController {
 	private List<BlueCollarItem> bluelistItems = new ArrayList<BlueCollarItem>();
 	private static int index = 1;
 
-	@PostMapping("/addUser")
-
-	public String saveUSer(@RequestBody BlueCollarItem blueCollarItem){
-//		blueRepository.save(blueCollarItem);
-		return "Added book with id" + blueCollarItem.getId();
-	}
-
-	@GetMapping("/findAllUsers")
-	public List<BlueCollarItem> getUsers(){
-		return null;
-	}
 
 	@GetMapping("/bluelistItemForm")
 	public ModelAndView showWatchlistItemForm() {
-		
+
 		String viewName = "bluelistItemForm";
-		
 		Map<String,Object> model = new HashMap<String,Object>();
-		
 		model.put("watchlistItem", new BlueCollarItem());
-		
-		return new ModelAndView(viewName,model); 
+		return new ModelAndView(viewName,model);
 	}
 	@GetMapping("/signup")
 	public ModelAndView getBlueSignUp() {
-		
 		String viewName = "signup";
-		
 		Map<String,Object> model = new HashMap<String,Object>();
-		
-		
 		return new ModelAndView(viewName,model);
 		
 	}
@@ -74,7 +56,6 @@ public class BlueCollarController {
 	public ModelAndView getBlueAbout() {
 		
 		String viewName = "about";
-		
 		Map<String,Object> model = new HashMap<String,Object>();
 		return new ModelAndView(viewName,model);
 		
@@ -101,20 +82,18 @@ public class BlueCollarController {
 	public ModelAndView getBlueLive() {
 
 		String viewName = "blueLive";
-
 		Map<String,Object> model = new HashMap<String,Object>();
-
 		return new ModelAndView(viewName,model);
 
 	}
 	@PostMapping("/bluelistItemForm")
 	public ModelAndView submitWatchlistItemForm(BlueCollarItem bluelistItem) {
-		
+
 		bluelistItem.setId(index++);
 		bluelistItems.add(bluelistItem);
 		RedirectView redirect = new RedirectView();
 		redirect.setUrl("/bluecollarlist");
-		
+
 		return new ModelAndView(redirect);
 	}
 	@GetMapping("/bluecollarlist")
@@ -142,6 +121,17 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 
 	}
+	@PostMapping("/subscribed")
+	public ModelAndView scbscribe(BlueCollarItem bluelistItem) {
+
+
+		bluelistItems.add(bluelistItem);
+		RedirectView redirect = new RedirectView();
+		redirect.setUrl("/login");
+
+		return new ModelAndView(redirect);
+	}
+
 	@MessageMapping("/chat.sendMessage")
 	@SendTo("/topic/public")
 	public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {

@@ -8,39 +8,41 @@
    <body>
       <div class = "container">
           <nav class="navbar sticky-top navbar-light bg-light">
-            <a class = "navbar-brand" href = "/static">BlueCollar App</a>
-            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" 
-               data-target = "#navbarSupportedContent" 
-               aria-controls = "navbarSupportedContent" aria-expanded = "false" 
-               aria-label = "Toggle navigation">
-               <span class = "navbar-toggler-icon"></span>
-            </button>
-            
-           <div class = "collapse navbar-collapse" id = "navbarSupportedConten">
-               <ul class = "navbar-nav mr-auto">
-                  <li class = "nav-item">
-                     <a class = "nav-link active" href = "/static">HOME</a>
-                  </li>
-                  <li class = "nav-item">
-                     <a class = "nav-link" href = "service"> SERVICE</a>
-                  </li>
-                  <li class = "nav-item ">
-                     <a class = "nav-link" href = "about">ABOUT US</a>
-                  </li>
-                  <li class = "nav-item ">
-                     <a class = "nav-link" href = "contact">CONTACT US</a>
-                  </li>
-                   <li class = "nav-item active">
-                     <a class = "nav-link" href = ""></a>
-                  </li>
-               </ul>
-               
-            </div>
-      	</nav> 
-                 
-         
-               
-            </div>
+              <a class = "navbar-brand" href = "/static">BlueCollar App</a>
+              <button class = "navbar-toggler" type = "button" data-toggle = "collapse"
+                      data-target = "#navbarSupportedContent"
+                      aria-controls = "navbarSupportedContent" aria-expanded = "false"
+                      aria-label = "Toggle navigation">
+                  <span class = "navbar-toggler-icon"></span>
+              </button>
+
+              <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+                  <ul class = "navbar-nav mr-auto">
+
+                      <li class = "nav-item">
+                          <a class = "nav-link" href = "service">SERVICE</a>
+                      </li>
+                      <li class = "nav-item ">
+                          <a class = "nav-link" href = "about">ABOUT US</a>
+                      </li>
+                      <li class = "nav-item ">
+                          <a class = "nav-link" href = "contact">CONTACT US</a>
+                      </li>
+                      <li class = "nav-item ">
+                          <a class = "nav-link" href = "bluelistItemForm">POST JOB </a>
+                      </li>
+                      <li class = "nav-item ">
+                          <a class = "nav-link" href = "blueLive">LIVE CHAT </a>
+                      </li>
+                      <li>
+                          <button type="button" class="btn btn-black" id="logOut" name="button"><a href="login">logOut</a></button>
+                      </li>
+                  </ul>
+
+              </div>
+          </nav>
+
+      </div>
       	</nav>
       <div class="container">
 
@@ -59,22 +61,19 @@
               <tbody>
               <tr>
                   <td>User1</td>
-
                   <td> Plumber </td>
-
                   <td > Iowa,FA</td>
                   <td>012345678</td>
                   <td>10/25/2022</td>
-                  <td><a href="#" class="btn btn-info" role="button"> Apply✅</a></td>
+                  <td><a href="apply" class="btn btn-info" role="button"> Apply✅</a></td>
               </tr>
-              <tr th:each="bluelistItem: ${bluelistItems}">
-                  <td th:text="${bluelistItem.title}"></td>
-
-                  <td th:text="${bluelistItem.rating}"> </td>
-                  <td th:text="${bluelistItem.priority}"></td>
-                  <td th:text="${bluelistItem.comment}"></td>
-                  <td><a href="#" class="btn btn-info" role="button">✅</a></td>
-              </tr>
+<!--              <tr th:each="bluelistItem: ${bluelistItems}">-->
+<!--                  <td th:text="${bluelistItem.title}"></td>-->
+<!--                  <td th:text="${bluelistItem.rating}"> </td>-->
+<!--                  <td th:text="${bluelistItem.priority}"></td>-->
+<!--                  <td th:text="${bluelistItem.comment}"></td>-->
+<!--                  <td><a href="#" class="btn btn-info" role="button">✅</a></td>-->
+<!--              </tr>-->
 
               </tbody>
           </table>
@@ -91,16 +90,16 @@
                   <td > Calforina,CA</td>
                   <td>09848382</td>
                   <td>11/25/2022</td>
-                  <td><a href="#" class="btn btn-info" role="button"> Apply✅</a></td>
+                  <td><a href="apply" class="btn btn-info" role="button"> Apply✅</a></td>
               </tr>
-              <tr th:each="bluelistItem: ${bluelistItems}">
-                  <td th:text="${bluelistItem.title}"></td>
+<!--              <tr th:each="bluelistItem: ${bluelistItems}">-->
+<!--                  <td th:text="${bluelistItem.title}"></td>-->
 
-                  <td th:text="${bluelistItem.rating}"> </td>
-                  <td th:text="${bluelistItem.priority}"></td>
-                  <td th:text="${bluelistItem.comment}"></td>
-                  <td><a href="#" class="btn btn-info" role="button">✅</a></td>
-              </tr>
+<!--                  <td th:text="${bluelistItem.rating}"> </td>-->
+<!--                  <td th:text="${bluelistItem.priority}"></td>-->
+<!--                  <td th:text="${bluelistItem.comment}"></td>-->
+<!--                  <td><a href="#" class="btn btn-info" role="button">✅</a></td>-->
+<!--              </tr>-->
 
               </tbody>
           </table>
@@ -108,7 +107,7 @@
 
       </div>
          
-           <form action="#" method="post" th:action="@{/bluelistItemForm}" th:object="${bluecollarItem}">
+           <form action="" method="post" th:action="@{/bluelistItemForm}" th:object="${bluecollarItems}">
             <h2 class = "mt-4"> Post Job</h2>
 
             <hr/>
@@ -143,17 +142,13 @@
                <div class = "col-sm-4">
                   <input    type = "text"  id ="priority" class = "form-control" placeholder = "">
                </div>
-
             </div>
-               
             <div class = "form-group row">
             	<label for = "comments" class = "col-sm-2 col-form-label">Telephone</label>
             	<div class = "col-sm-4">
                     <input    type = "text"  id ="comments" class = "form-control" placeholder = "">
                </div>
-
             </div>
-            
             <div class = "form-group row">
                <div class = "col-sm-10">
                 
