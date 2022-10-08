@@ -8,7 +8,9 @@ import java.util.Map;
 //import com.example.BLUE.COLLAR.SERVICE.repository.BlueRepository;
 
 import com.example.BLUE.COLLAR.SERVICE.model.Job;
+import com.example.BLUE.COLLAR.SERVICE.model.User;
 import com.example.BLUE.COLLAR.SERVICE.service.JobService;
+import com.example.BLUE.COLLAR.SERVICE.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +26,10 @@ import com.example.BLUE.COLLAR.SERVICE.model.BlueCollarItem;
 public class BlueCollarController {
 	@Autowired
 	private JobService service;
-	private List<BlueCollarItem> bluelistItems = new ArrayList<BlueCollarItem>();
+	private UserService userService;
+	private List<User> bluelistItems = new ArrayList<User>();
 	private List<Job> jobs=new ArrayList<>();
+
 
 	private static int index = 1;
 
@@ -35,7 +39,7 @@ public class BlueCollarController {
 
 		String viewName = "bluelistItemForm";
 		Map<String,Object> model = new HashMap<String,Object>();
-		model.put("watchlistItem", new BlueCollarItem());
+		model.put("bluelistItem", new BlueCollarItem());
 		return new ModelAndView(viewName,model);
 	}
 	@GetMapping("/signup")
@@ -48,6 +52,11 @@ public class BlueCollarController {
 	@PostMapping("/add/job")
 	public Job save(@RequestBody Job job){
 		return service.save(job);
+	}
+	@PostMapping("add/user")
+	public User save(@RequestBody User user){
+		return userService.save(user);
+
 	}
 
 	@RequestMapping("/service")
@@ -165,16 +174,7 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 
 	}
-	@PostMapping("/subscribed")
-	public ModelAndView scbscribe(BlueCollarItem bluelistItem) {
 
-
-		bluelistItems.add(bluelistItem);
-		RedirectView redirect = new RedirectView();
-		redirect.setUrl("/login");
-
-		return new ModelAndView(redirect);
-	}
 	@GetMapping("/registrationForm")
 	public ModelAndView showRegsistration(){
 
