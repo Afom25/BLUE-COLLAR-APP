@@ -152,7 +152,7 @@ public class BlueCollarController {
 
 	@GetMapping("/locationId")
 	public ModelAndView getBluebluelocationId() {
-		String viewName = "locationId";
+		String viewName = "registrationForm";
 		Map<String,Object> model = new HashMap<String,Object>();
 		return new ModelAndView(viewName,model);
 
@@ -184,7 +184,5 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 
 	}
-
-
 
 }
