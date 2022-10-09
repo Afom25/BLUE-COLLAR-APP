@@ -23,8 +23,7 @@ public class BlueCollarController {
 	private JobService service;
 	@Autowired
 	private UserService userService;
-	@Autowired
-	private JobService jobService;
+
 	private List<User> users = new ArrayList<User>();
 	private List<Job> jobs=new ArrayList<>();
 	public List<User> jobApplies = new ArrayList<User>();
@@ -39,11 +38,12 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 	}
 	@GetMapping("/signup")
-	public ModelAndView getBlueSignUp() {
+	public ModelAndView getBlueSignUp(Model model) {
 		String viewName = "signup";
-		Map<String,Object> model = new HashMap<String,Object>();
-		return new ModelAndView(viewName,model);
-		
+		//Map<String,Object> model = new HashMap<String,Object>();
+		User user=new User();
+		model.addAttribute("user",user);
+		return new ModelAndView(viewName);
 	}
 	@PostMapping("/add/job")
 	public Job save(@RequestBody Job job){
@@ -88,27 +88,31 @@ public class BlueCollarController {
 		String viewName = "job";
 		Job job=new Job();
 		model.addAttribute("job",job);
+		List<Job> allJobs=service.listAll();
+		model.addAttribute("listjob",allJobs);
 		return new ModelAndView(viewName);
 	}
-	@PostMapping("/bluelistItemForm")
+	@PostMapping("/job")
 	public ModelAndView  handleForm( Job job,Model model) {
-       System.out.println(job.toString());
+     //  System.out.println(job.toString());
 	   jobs.add(job);
-		String viewName = "bluelistItemForm";
+		String viewName = "job";
 		//Map<String,Object> model = new HashMap<String,Object>();
 		//model.put("bluelistItems", new BlueCollarItem());
-		model.addAttribute("listjob",jobs);
+		List<Job> allJobs=service.listAll();
+		//System.out.println(allJobs);
+ 		model.addAttribute("listjob",allJobs);
 		service.save(job);
 		return new ModelAndView(viewName);
 	}
 	@PostMapping("/signup")
-	public ModelAndView handleformUser (User user,Model model){
-		System.out.println(users.toString());
+	public ModelAndView handleformUser (User user){
+		System.out.println(user.toString());
 		jobApplies.add(user);
-		String viewName = "signup";
+		String viewName = "login";
 		userService.save(user);
 
-		model.addAttribute("users",users);
+	//	model.addAttribute("users",users);
 		return new ModelAndView(viewName);
 	}
 //	@PostMapping("/add/jobapply")

@@ -1,12 +1,10 @@
 package com.example.BLUE.COLLAR.SERVICE.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +13,7 @@ public class User {
     private String lastname;
     private String email;
     private String password;
+    @Transient
     private String confirmpassword;
 
     public User( String firstname, String lastname, String email, String password, String confirmpassword) {

@@ -21,7 +21,7 @@ public class JobService {
         return repo.findAll();
     }
     public Job save(Job job){
-        System.out.printf(job.toString());
+       // System.out.printf(job.toString());
         return repo.save(job);
 
     }

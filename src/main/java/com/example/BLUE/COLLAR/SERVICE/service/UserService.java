@@ -17,9 +17,11 @@ public class UserService {
         return  userRepository.findAll();
 
     }
-    public User save(User user){
+    public void save(User user){
         System.out.println(user.toString());
-        return userRepository.save(user);
+         userRepository.save(user);
+
+
     }
 
 }
