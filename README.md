@@ -9,7 +9,7 @@ BlueCollar Application is an app where a blue collar workers car register themse
 ## Technologies
 Project is created with:
 * Spring Boot
-* MySQL 
+* MySQL git ps
 * Javascript 
 * Thymleaf
 ### Member of Teams 
