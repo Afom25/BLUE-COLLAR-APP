@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-//@Transactional
+
 public class JobService {
 
     @Autowired
@@ -25,5 +25,5 @@ public class JobService {
         return repo.save(job);
 
     }
-//    public void sav e (P)
+
 }

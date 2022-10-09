@@ -15,31 +15,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
-
-import com.example.BLUE.COLLAR.SERVICE.model.BlueCollarItem;
-
-
 
 @RestController
 
 public class BlueCollarController {
 	@Autowired
 	private JobService service;
+	@Autowired
 	private UserService userService;
-	private List<User> bluelistItems = new ArrayList<User>();
+	@Autowired
+	private JobService jobService;
+	private List<User> users = new ArrayList<User>();
 	private List<Job> jobs=new ArrayList<>();
-
-
+	public List<User> jobApplies = new ArrayList<User>();
 	private static int index = 1;
 
 
 	@GetMapping("/bluelistItemForm")
 	public ModelAndView showWatchlistItemForm() {
-
 		String viewName = "bluelistItemForm";
 		Map<String,Object> model = new HashMap<String,Object>();
-		model.put("bluelistItem", new BlueCollarItem());
+		model.put("bluelistItem", new User());
 		return new ModelAndView(viewName,model);
 	}
 	@GetMapping("/signup")
@@ -53,56 +49,107 @@ public class BlueCollarController {
 	public Job save(@RequestBody Job job){
 		return service.save(job);
 	}
-	@PostMapping("add/user")
-	public User save(@RequestBody User user){
-		return userService.save(user);
-
-	}
 
 	@RequestMapping("/service")
 	public ModelAndView getBlueService() {
-		
 		String viewName = "service";
-		
 		Map<String,Object> model = new HashMap<String,Object>();
-		
 		return new ModelAndView(viewName,model);
 		
 	}
 	@GetMapping("/about")
 	public ModelAndView getBlueAbout() {
-		
 		String viewName = "about";
 		Map<String,Object> model = new HashMap<String,Object>();
 		return new ModelAndView(viewName,model);
-		
 	}
 	@GetMapping("/contact")
 	public ModelAndView getBlueContact() {
-		
 		String viewName = "contact";	
 		Map<String,Object> model = new HashMap<String,Object>();	
 		return new ModelAndView(viewName,model);
-		
 	}
 	@GetMapping("/login")
 	public ModelAndView getBlueLogin() {
-		
 		String viewName = "login";
-		
 		Map<String,Object> model = new HashMap<String,Object>();
-
 		return new ModelAndView(viewName,model);
 		
 	}
 	@GetMapping("/blueLive")
 	public ModelAndView getBlueLive() {
-
 		String viewName = "blueLive";
 		Map<String,Object> model = new HashMap<String,Object>();
 		return new ModelAndView(viewName,model);
 
 	}
+	@RequestMapping("/job")
+	public ModelAndView getJob(Model model) {
+		String viewName = "job";
+		Job job=new Job();
+		model.addAttribute("job",job);
+		return new ModelAndView(viewName);
+	}
+	@PostMapping("/bluelistItemForm")
+	public ModelAndView  handleForm( Job job,Model model) {
+       System.out.println(job.toString());
+	   jobs.add(job);
+		String viewName = "bluelistItemForm";
+		//Map<String,Object> model = new HashMap<String,Object>();
+		//model.put("bluelistItems", new BlueCollarItem());
+		model.addAttribute("listjob",jobs);
+		service.save(job);
+		return new ModelAndView(viewName);
+	}
+	@PostMapping("/signup")
+	public ModelAndView handleformUser (User user,Model model){
+		System.out.println(users.toString());
+		jobApplies.add(user);
+		String viewName = "signup";
+		userService.save(user);
+
+		model.addAttribute("users",users);
+		return new ModelAndView(viewName);
+	}
+//	@PostMapping("/add/jobapply")
+//	public Job save(@RequestBody User user){
+//		return service.save(service);
+//	}
+	@GetMapping("/bluecollarlist")
+	public ModelAndView getBluebluelist() {
+		String viewName = "bluecollarlist";
+		Map<String,Object> model = new HashMap<String,Object>();
+		model.put("users", users);
+		return new ModelAndView(viewName,model);
+	}
+	@GetMapping("/location")
+	public ModelAndView getBluebluelocation() {
+
+		String viewName = "location";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+	}
+	@GetMapping("/locationId")
+	public ModelAndView getBluebluelocationId() {
+		String viewName = "registrationForm";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+	}
+	@GetMapping("/registrationForm")
+	public ModelAndView showRegsistration(){
+		String viewName = "registrationForm";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+	}
+	@PostMapping("/registrationForm")
+	public ModelAndView saveBlueCollarItem(){
+		String viewName = "displayform";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+
+	}
+
+}
 //	@PostMapping("/bluelistItemForm")
 //	public ModelAndView submitWatchlistItemForm(BlueCollarItem bluelistItem) {
 //
@@ -121,76 +168,3 @@ public class BlueCollarController {
 //		return new ModelAndView(viewName,model);
 //
 //	}
-
-
-
-	@RequestMapping("/job")
-	public ModelAndView getJob(Model model) {
-
-		String viewName = "job";
-
-		Job job=new Job();
-
-		model.addAttribute("job",job);
-
-		return new ModelAndView(viewName);
-
-	}
-
-	@PostMapping("/bluelistItemForm")
-	public ModelAndView  handleForm( Job job,Model model) {
-
-       System.out.println(job.toString());
-	   jobs.add(job);
-		String viewName = "bluelistItemForm";
-		//Map<String,Object> model = new HashMap<String,Object>();
-		//model.put("bluelistItems", new BlueCollarItem());
-		model.addAttribute("listjob",jobs);
-		service.save(job);
-		return new ModelAndView(viewName);
-	}
-	@GetMapping("/bluecollarlist")
-	public ModelAndView getBluebluelist() {
-		
-		String viewName = "bluecollarlist";
-		Map<String,Object> model = new HashMap<String,Object>();
-		model.put("bluelistItems", bluelistItems);
-		return new ModelAndView(viewName,model);
-	}
-
-	@GetMapping("/location")
-	public ModelAndView getBluebluelocation() {
-
-		String viewName = "location";
-		Map<String,Object> model = new HashMap<String,Object>();
-		return new ModelAndView(viewName,model);
-
-	}
-
-	@GetMapping("/locationId")
-	public ModelAndView getBluebluelocationId() {
-		String viewName = "registrationForm";
-		Map<String,Object> model = new HashMap<String,Object>();
-		return new ModelAndView(viewName,model);
-
-	}
-
-	@GetMapping("/registrationForm")
-	public ModelAndView showRegsistration(){
-
-
-		String viewName = "registrationForm";
-		Map<String,Object> model = new HashMap<String,Object>();
-		return new ModelAndView(viewName,model);
-
-
-	}
-	@PostMapping("/registrationForm")
-	public ModelAndView saveBlueCollarItem(){
-		String viewName = "displayform";
-		Map<String,Object> model = new HashMap<String,Object>();
-		return new ModelAndView(viewName,model);
-
-	}
-
-}

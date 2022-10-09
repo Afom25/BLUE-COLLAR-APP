@@ -14,15 +14,13 @@ public class Job {
     private String jobTitle;
     private String location;
     private String telephone;
-
     private String datepost;
-
 
     public Job(){
 
     }
 
-    public Long getIg(){
+    public Long getI(){
         return id;
     }
 
