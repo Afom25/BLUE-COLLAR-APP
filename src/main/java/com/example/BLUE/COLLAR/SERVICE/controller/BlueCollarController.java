@@ -115,10 +115,7 @@ public class BlueCollarController {
 	//	model.addAttribute("users",users);
 		return new ModelAndView(viewName);
 	}
-//	@PostMapping("/add/jobapply")
-//	public Job save(@RequestBody User user){
-//		return service.save(service);
-//	}
+
 	@GetMapping("/bluecollarlist")
 	public ModelAndView getBluebluelist() {
 		String viewName = "bluecollarlist";
@@ -152,23 +149,42 @@ public class BlueCollarController {
 		return new ModelAndView(viewName,model);
 
 	}
+	@GetMapping("/plumber")
+	public ModelAndView getPlumber() {
+		String viewName = "plumber";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+	}
+	@GetMapping("/welder")
+	public ModelAndView getWelder() {
+		String viewName = "welder";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+	}
+	@GetMapping("/home")
+	public ModelAndView showIndex() {
+		String viewName = "home";
+		Map<String,Object> model = new HashMap<String,Object>();
+
+		return new ModelAndView(viewName,model);
+	}
+
+
 
 }
-//	@PostMapping("/bluelistItemForm")
-//	public ModelAndView submitWatchlistItemForm(BlueCollarItem bluelistItem) {
-//
-//		bluelistItem.setId(index++);
-//		bluelistItems.add(bluelistItem);
-//		RedirectView redirect = new RedirectView();
-//		redirect.setUrl("/bluecollarlist");
-//
-//		return new ModelAndView(redirect);
-//	}
-//	@PostMapping("/bluelistItemForm")
-//	public ModelAndView submitBLue(){
-//
-//		String viewName = "bluecollarlist";
-//		Map<String,Object> model = new HashMap<String,Object>();
-//		return new ModelAndView(viewName,model);
-//
-//	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
