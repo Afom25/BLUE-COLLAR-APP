@@ -155,6 +155,14 @@ public class BlueCollarController {
 		Map<String,Object> model = new HashMap<String,Object>();
 		return new ModelAndView(viewName,model);
 	}
+	@GetMapping("/welder")
+	public ModelAndView getWelder() {
+		String viewName = "welder";
+		Map<String,Object> model = new HashMap<String,Object>();
+		return new ModelAndView(viewName,model);
+	}
+
+
 
 }
 
