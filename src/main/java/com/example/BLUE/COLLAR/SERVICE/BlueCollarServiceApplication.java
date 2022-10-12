@@ -7,11 +7,13 @@ package com.example.BLUE.COLLAR.SERVICE;
 import com.example.BLUE.COLLAR.SERVICE.model.User;
 import com.example.BLUE.COLLAR.SERVICE.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 import javax.annotation.PostConstruct;
 import java.util.List;

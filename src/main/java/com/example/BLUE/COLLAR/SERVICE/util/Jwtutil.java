@@ -1,7 +1,5 @@
 package com.example.BLUE.COLLAR.SERVICE.util;
 
-
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -13,11 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-
 @Service
-public class JwtUtil {
+public class Jwtutil {
 
-    private String secret = "hidri";
+    private String secret = "secret1";
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -39,9 +36,9 @@ public class JwtUtil {
         return extractExpiration(token).before(new Date());
     }
 
-    public String generateToken(String firstname) {
+    public String generateToken(String username) {
         Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, firstname);
+        return createToken(claims, username);
     }
 
     private String createToken(Map<String, Object> claims, String subject) {
@@ -56,3 +53,5 @@ public class JwtUtil {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 }
+
+
