@@ -6,22 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 
-import com.example.BLUE.COLLAR.SERVICE.model.AuthRequest;
-import com.example.BLUE.COLLAR.SERVICE.model.AuthResponse;
 import com.example.BLUE.COLLAR.SERVICE.model.Job;
 import com.example.BLUE.COLLAR.SERVICE.model.User;
 import com.example.BLUE.COLLAR.SERVICE.service.JobService;
 import com.example.BLUE.COLLAR.SERVICE.service.UserService;
-import com.example.BLUE.COLLAR.SERVICE.util.Jwtutil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,10 +29,10 @@ public class BlueCollarController {
 	private UserService userService;
 
 
-	@Autowired
-	private Jwtutil jwtutil;
-	@Autowired
-	private AuthenticationManager authenticationManager;
+//	@Autowired
+//	private Jwtutil jwtutil;
+//	@Autowired
+//	private AuthenticationManager authenticationManager;
 
 	private List<User> users = new ArrayList<User>();
 	private List<Job> jobs = new ArrayList<>();
@@ -199,17 +193,7 @@ public class BlueCollarController {
 		return new ModelAndView(viewName, model);
 	}
 
-	@PostMapping("/authenticate")
-	public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
-		try {
-			authenticationManager.authenticate(
-					new UsernamePasswordAuthenticationToken(authRequest.getFirstname(), authRequest.getPassword())
-			);
-		} catch (Exception ex) {
-			throw new Exception("inavalid username/password");
-		}
-		return jwtutil.generateToken(authRequest.getFirstname());
-	}
+
 }
 
 
