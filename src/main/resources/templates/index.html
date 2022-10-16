@@ -13,27 +13,48 @@
 </head>
 
 <body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">BlueCollar App</a>
+        <form class="d-flex">
+              <button class="btn btn-outline-primary" type="signup"> <a href="signup">Register  </a></button>
+              <button class="btn btn-outline-primary" type="login"> <a href="login">Login </a></button>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 	<div class="container">
 	<div class="container-fluid" id="about-us">
         <center > <h>Meet Our Team Expert</h></center>
         <center> <img th:src="@{/images/logo.png}" alt="" width="300px"></center>
-        <center><h4>If the workers of the world want to win, all they have to do is recognize their own solidarity</h4></center>
+        <center><h4>If the workers of the world want to win, all they have to do is recognize their own solidarity
+           </h4>
+        </center><br/>
+        <center> <h2>  Find the best job near you
+            284,978+ active job vacancies to grab</h2></center>
+        <CENTER> <select class="form-select" aria-label="Default select example">
+            <option selected>SelectJob Role</option>
+            <option value="1">Carpenter</option>
+            <option value="2">Contructor</option>
+            <option value="3">Gardener</option>
+        </select>
+            <select class="form-select1" aria-label="Default select example">
+                <option selected>Select City</option>
+                <option value="1">Iowa</option>
+                <option value="2">Des moines</option>
+                <option value="3">Chicago</option>
+            </select>
+            <button class="btn btn-outline-primary" type="submit">Search</button></CENTER>
 
-
-      <div class="row">
+        <div class="row">
         <div class="col-md-4">
         </div><br/><br/>
 
         <div class="col-md-4">
           <img th:src="@{/images/blue2.jpeg}" width="400px" alt="blue image" class="rounded-circle teamimages">
-          <h3>BLUE COLLAR APP</h3>
-            <li>
-                <a href="signup"> <button type="submit" class="btn btn-black" id="signup"> Sign Up </button> </a>
-            </li>
-            <hr/>
-            <li>
-                <a href="login"><button type="submit" class="btn btn-black" id="signupp">Login</button></a>
-            </li>
+
+
         </div>
         <div class="col-md-4">
         </div>

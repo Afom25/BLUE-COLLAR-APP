@@ -7,16 +7,16 @@
 </head>
 
 <body>
+<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
+    <a class = "navbar-brand" href = "/">BlueCollar App</a>
+    <button class = "navbar-toggler" type = "button" data-toggle = "collapse"
+            data-target = "#navbarSupportedContent"
+            aria-controls = "navbarSupportedContent" aria-expanded = "false"
+            aria-label = "Toggle navigation">
+        <span class = "navbar-toggler-icon"></span>
+    </button>
+</nav>
 	<div class="container">
- 		<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
-            <a class = "navbar-brand" href = "">BlueCollar App</a>
-            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" 
-               data-target = "#navbarSupportedContent" 
-               aria-controls = "navbarSupportedContent" aria-expanded = "false" 
-               aria-label = "Toggle navigation">
-               <span class = "navbar-toggler-icon"></span>
-            </button>
-      	</nav>
 
 <div class="container-fluid main">
     <div class=" main overlay2">
@@ -27,12 +27,8 @@
       <h3 class="login-heading">Sign Up</h3>
       <p>Welcome back! Please fill the form to get Services</p>
       <div class="form">
-
-
-        <!-- signUp -->
           <form  method="post" th:action="@{/signup}" th:object="${user}">
-<!--          <form action="login" th:action="@{/login}">-->
-<!--        <form class="target-signUp" action="login" method="post" style="">-->
+
           <div class="form-group">
             <label for="firstname">Firstname</label>
             <input type="text" class="form-control "  id="firstname" th:field="*{firstname}" >
@@ -61,9 +57,14 @@
         </div>
       </div>
     </div>
-    <div class="pic">
+        <div class="icons">
+            <img src="/images/facebook.png" alt="">
+            <img src="/images/g_plus.png" alt="">
+            <img src="/images/skype.png" alt="">
+            <img src="/images/twitter.png" alt="">
+            <img src="/images/you_tube.png" alt="">
 
-    </div>
+        </div>
     </div>
   </div>
     </div>
