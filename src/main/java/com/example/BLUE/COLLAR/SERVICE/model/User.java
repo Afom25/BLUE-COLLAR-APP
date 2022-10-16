@@ -13,7 +13,9 @@ public class User {
     private Long id;
     @Column(unique=true)
     @NotNull
+
     private String firstname;
+
     private String lastname;
     private String email;
     private String password;
