@@ -3,7 +3,6 @@
 <!-- Meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
@@ -17,28 +16,28 @@
     <div class="container-fluid">
         <a class="navbar-brand">BlueCollar App</a>
         <form class="d-flex">
-              <button class="btn btn-outline-primary" type="signup"> <a href="signup">Register  </a></button>
-            <button class="btn btn-outline-primary" type="login"> <a href="login">Login  </a></button>
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit">Search</button>
+             <button class="btn btn-outline-primary" type="signup"> <a href="signup">Register</a> </button>
+     <button class="btn btn-outline-primary" type="login"> <a href="login">Login  </a></button>
+<!--            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--            <button class="btn btn-outline-primary" type="submit">Search</button>-->
         </form>
     </div>
 </nav>
 	<div class="container">
-	<div class="container-fluid" id="about-us">
-        <center > <h>Meet Our Team Expert</h></center>
+	<div class="container-fluid" id="about-us"><br/><br/>
+        <center > <h3>Meet Our Team Expert</h3></center><br/><br/>
         <center> <img th:src="@{/images/logo.png}" alt="" width="300px"></center>
         <center><h4>If the workers of the world want to win, all they have to do is recognize their own solidarity
            </h4>
-        </center><br/>
-        <center> <h2>  Find the best job near you 284,978+ active job vacancies to grab</h2></center>
+        </center><br/><br/><br/>
+        <center> <h2>  Find the best job near you 284,978+ active job vacancies to grab</h2></center><br/><br/><br/><br/><br/><br/>
 
         <div class="row">
         <div class="col-md-4">
-        </div><br/><br/>
+        </div><br/><br/><br/><br/>
 
         <div class="col-md-4">
-          <img th:src="@{/images/blue2.jpeg}" width="400px" alt="blue image" class="rounded-circle teamimages">
+          <img th:src="@{/images/blue2.jpeg}" width="400px" alt="blue image" class="rounded-circle teamimages"><br/><br/><br/><br/><br/>
         </div>
         <div class="col-md-4">
         </div>
@@ -114,42 +113,41 @@
 
         </div>
         <br><br/><br/>
-
-        <div class="container-fluid final-top">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"><br>
-                    <h5 class="text-black">Feel free to subscribe for more details</h5>
-                    <form class="sub" action="subscribed" method="post">
-                        <div class="form-group">
-                            <label class="text-black" > FullName </label>
-                            <input type="text" class="form-control" name="" value="" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-black" > Email </label>
-                            <input type="email" class="form-control" name="" value="" id="email">
-                        </div><br>
-                        <a href="login"><button type="submit" class="btn btn-primary" name="button">Subscribe</button></a>
-                    </form><br/>
-                    <div>
-                        <a th:href="@{/registrationForm}">Go to bluecollarItem</a>
-
-                    </div>
-                    <div class="icons">
-                        <img src="/images/facebook.png" alt="">
-                        <img src="/images/g_plus.png" alt="">
-                        <img src="/images/skype.png" alt="">
-                        <img src="/images/twitter.png" alt="">
-                        <img src="/images/you_tube.png" alt="">
-
-                    </div>
-                </div>
+    </div>
+    </div>
+<div class="row">
+    <div class="col-md-6">
+        <center> <h2> Are you an  employer?</h2>
+            <h4> Hire In 30 mins</h4> </center><br/><br/>
+        <center> <a class="btn btn2 btn-primary " href="job">Post Free Job </a></center>
+    </div>
+    <div class="col-md-6"><br>
+        <h5 class="text-black">Feel free to subscribe for more details</h5>
+        <form class="sub" action="subscribed" method="post">
+            <div class="form-group">
+                <label class="text-black" > FullName </label>
+                <input type="text" class="form-control" name="" value="" id="name1">
             </div>
-        </div>
-    </div>
-    </div>
+            <div class="form-group">
+                <label class="text-black" > Email </label>
+                <input type="email" class="form-control" name="" value="" id="email2">
+            </div><br>
+            <a href="login"><button type="submit" class="btn btn-primary" name="button">Subscribe</button></a>
+        </form><br/>
 
+    </div>
+     <div>
+        <a th:href="@{/registrationForm}">Go to bluecollarItem</a>
+    </div>
+        <div class="icons">
+            <img src="/images/facebook.png" alt="">
+            <img src="/images/g_plus.png" alt="">
+            <img src="/images/skype.png" alt="">
+            <img src="/images/twitter.png" alt="">
+            <img src="/images/you_tube.png" alt="">
 
+        </div></center>
+</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
