@@ -183,13 +183,31 @@ public class BlueCollarController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		return new ModelAndView(viewName, model);
 	}
+	@GetMapping("/gardener")
+	public ModelAndView getGardener() {
+		String viewName = "gardener";
+		Map<String, Object> model = new HashMap<String, Object>();
+		return new ModelAndView(viewName, model);
+	}
+	@GetMapping("/carpenter")
+	public ModelAndView getCarpenter() {
+		String viewName = "carpenter";
+		Map<String, Object> model = new HashMap<String, Object>();
+		return new ModelAndView(viewName, model);
+	}
+	@GetMapping("/electrican")
+	public ModelAndView getElectrican() {
+		String viewName = "electrican";
+		Map<String, Object> model = new HashMap<String, Object>();
+		return new ModelAndView(viewName, model);
+	}
+
 
 
 	@GetMapping("/home")
 	public ModelAndView showIndex() {
 		String viewName = "home";
 		Map<String, Object> model = new HashMap<String, Object>();
-
 		return new ModelAndView(viewName, model);
 	}
 

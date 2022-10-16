@@ -15,46 +15,66 @@
 </head>
 
 <body>
+<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
+    <a class = "navbar-brand" href = "/">BlueCollar App</a>
+    <button class = "navbar-toggler" type = "button" data-toggle = "collapse"
+            data-target = "#navbarSupportedContent"
+            aria-controls = "navbarSupportedContent" aria-expanded = "false"
+            aria-label = "Toggle navigation">
+        <span class = "navbar-toggler-icon"></span>
+    </button>
+
+    <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+        <ul class = "navbar-nav mr-auto">
+            <li class = "nav-item">
+                <a class = "nav-link active" href = "">HOME</a>
+            </li>
+            <li class = "nav-item">
+                <a class = "nav-link" href = "service"> SERVICE</a>
+            </li>
+            <li class = "nav-item ">
+                <a class = "nav-link" href = "about">ABOUT US</a>
+            </li>
+            <li class = "nav-item ">
+                <a class = "nav-link" href = "contact">CONTACT US</a>
+            </li>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </ul>
+
+    </div>
+</nav>
+
+
 <div class="container">
-    <nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
-        <a class = "navbar-brand" href = "/">BlueCollar App</a>
-        <button class = "navbar-toggler" type = "button" data-toggle = "collapse"
-                data-target = "#navbarSupportedContent"
-                aria-controls = "navbarSupportedContent" aria-expanded = "false"
-                aria-label = "Toggle navigation">
-            <span class = "navbar-toggler-icon"></span>
-        </button>
 
-        <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
-            <ul class = "navbar-nav mr-auto">
-                <li class = "nav-item">
-                    <a class = "nav-link active" href = "">HOME</a>
-                </li>
-                <li class = "nav-item">
-                    <a class = "nav-link" href = "service"> SERVICE</a>
-                </li>
-                <li class = "nav-item ">
-                    <a class = "nav-link" href = "about">ABOUT US</a>
-                </li>
-                <li class = "nav-item ">
-                    <a class = "nav-link" href = "contact">CONTACT US</a>
-                </li>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </ul>
-
-        </div>
-    </nav>
     <div class="container-fluid" id="about-us">
         <center > <h>Meet Our Team Expert</h></center>
         <center> <img th:src="@{/images/logo.png}" alt="" width="300px"></center>
         <center><h4>If the workers of the world want to win, all they have to do is recognize their own solidarity</h4></center>
+        <div class="row">
+
+
+            <div class="col-md-3">
+                <img src="/images/blue.jpeg" width="400px" alt="blue image" class="rounded-circle teamimages">
+                <h3>BLUE COLLAR APP</h3>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-7">
+                <img src="/images/blue3.jpeg" width="400px" alt="blue image" class="rounded-circle teamimages">
+
+            </div>
+        </div>
         <div class="container">
             <table class="table">
                 <thead class = "thead-light">
                 <tr>
+                    <th class="text-left"> Vote👤 </th>
                     <th class="text-left">User 👤</th>
                     <th class="text-left">Job title ☑</th>
                     <th class="text-left">Location 📍</th>
@@ -65,11 +85,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <td> o votes </td>
-                <td>0 answers</td>
-                <td> 4 views </td>
+
                 <tr>
-                    <td>User1</td>
+                    <td><h7> 0 votes </h7><br/>
+                        <h7> 0 answers </h7><br/>
+                        <h7> 4 views </h7><br/></td>
+                    <td> User1 </td>
                     <td> Plumber </td>
                     <td > Iowa,FA</td>
                     <td>012345678</td>
@@ -77,6 +98,9 @@
                     <td><a href="registrationForm" class="btn btn-info" role="button"> Apply✅</a></td>
                 </tr>
                 <tr>
+                    <td><h7> 1 votes </h7><br/>
+                        <h7> 3 answers </h7><br/>
+                        <h7> 7 views </h7><br/></td>
                     <td>Hidri</td>
                     <td> Welder </td>
                     <td > Ottuma,IA</td>
@@ -85,6 +109,7 @@
                     <td><a href="registrationForm" class="btn btn-info" role="button"> Apply✅</a></td>
                 </tr>
                 <tr th:each="jobb: ${listjob}">
+                    <td >[[${jobb.user}]]</td>
                     <td >[[${jobb.user}]]</td>
                     <td >[[${jobb.jobTitle}]]</td>
                     <td >[[${jobb.location}]]</td>
