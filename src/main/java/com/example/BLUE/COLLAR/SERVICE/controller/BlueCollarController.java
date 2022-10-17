@@ -212,7 +212,7 @@ public class BlueCollarController {
 	}
 
 
-}
+	}
 
 
 

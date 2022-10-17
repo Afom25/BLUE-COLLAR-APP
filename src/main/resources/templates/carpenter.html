@@ -1,0 +1,386 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <title>BlueCollar App</title>
+</head>
+
+<body>
+<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
+  <a class = "navbar-brand" href = "/">BlueCollar App</a>
+  <button class = "navbar-toggler" type = "button" data-toggle = "collapse"
+          data-target = "#navbarSupportedContent"
+          aria-controls = "navbarSupportedContent" aria-expanded = "false"
+          aria-label = "Toggle navigation">
+    <span class = "navbar-toggler-icon"></span>
+  </button>
+
+  <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+    <ul class = "navbar-nav mr-auto">
+
+      <li class = "nav-item">
+        <a class = "nav-link" href = "service">SERVICE</a>
+
+      </li>
+      <li class = "nav-item ">
+        <a class = "nav-link" href = "job"> POST JOB </a>
+      </li>
+      <li class = "nav-item ">
+        <a class = "nav-link" href = "about">ABOUT US</a>
+      </li>
+      <li class = "nav-item ">
+        <a class = "nav-link" href = "contact">CONTACT US</a>
+      </li>
+
+
+
+      <!--            <li>-->
+      <!--                <button type="button" class="btn btn-black" id="logOut" name="button"><a href="login">logOut</a></button>-->
+      <!--            </li>-->
+    </ul>
+
+  </div>
+</nav>
+<div class="container">
+
+  <div class="container-fluid top-s">
+    <center> <img th:src="@{/images/logo.png}" alt="" width="300px"></center>
+    <center>  <h3>PLUMBER</h3> </center>
+    <p>Our Plumbers are well trained and offer the reqiured services not with the given time but depending on the load of work you have assigned them. for any clarifications feel free to contactus</p>
+  </div>
+  <div class="container-fluid mainc">
+    <div class="row">
+      <div class="col-md-2 locations" style="display: none;">
+        <h5> <span> <img src="assets/constraction/location.png" width="20px" alt=""> </span>Quick Apply </h5>
+        <h6 id="des">Des moines</h6>
+        <h6 id="iowa">Iowa City</h6>
+        <h6 id="cedar">Cedar Rapids</h6>
+        <h6 id="daven">Davenport</h6>
+        <h6 id="sinoux">Sionux City</h6>
+      </div>
+      <div class="container-fluid plumber col-md-12">
+        <div class="overlay">
+          <div class="wall-data">
+            <p>Click the link below to find a woker near you <br> <a class="btn btn2 btn-primary " href="locationId">Locations</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<span id="buru-top"></span><br><br><br>
+<div class="conainer buru-buru ">
+  <center> <h5><img src="/images/constraction/location.png" width="20px" alt="location-icon">Des moines</h5></center>
+  <br/><br/>
+
+  <div class="row">
+    <div class="card col-md-2">
+      <p> Active Job By Role</p>
+      <a href="location"><h4 id="text-1">Carpenter</h4> </a>
+      <a href="location"><h4 id="text-2">Constructor</h4></a>
+      <a href="location"><h4 id="text-3">Electricans</h4> </a>
+      <a href="location"><h4 id="text-4">Gardener</h4></a>
+      <a href="location"><h4 id="text-5">Painter</h4> </a>
+      <a href="location"><h4 id="text-6">Plumber</h4></a>
+      <a href="location"><h4 id="text-7">Roofer</h4> </a>
+      <a href="location"><h4 id="text-8">Welder</h4></a>
+    </div>
+
+    <div class="card col-md-3">
+      <img src="/images/plumber/p42.jpeg" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">ABC LTD COMPANY</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small>Hey I am David and I love plumbing. This is my profession </small><br><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description:  Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">10 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p12.png" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">XYZ LTD COMPANY</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small>Hey I am Mike and . This is my profession </small><br><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description: Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">11 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p42.jpeg" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">QRS LTD COMPANY</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br><br>
+        <h6><small>💸 40,000$ -50,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description: Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">12 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <!--            <div class="card col-md-1">-->
+
+    <!--                </div>-->
+  </div>
+</div>
+<br/><br/>
+<div class="conainer u ">
+  <center> <h5><img src="/images/constraction/location.png" width="20px" alt="location-icon">Iowa City</h5></center> <br/><br/>
+  <div class="row">
+    <div class="card col-md-2">
+      <p> Active Job By Role</p>
+      <a href="location"><h4 id="text-11">Carpenter</h4> </a>
+      <a href="location"><h4 id="text-21">Constructor</h4></a>
+      <a href="location"><h4 id="text-31">Electricans</h4> </a>
+      <a href="location"><h4 id="text-41">Gardener</h4></a>
+      <a href="location"><h4 id="text-51">Painter</h4> </a>
+      <a href="location"><h4 id="text-61">Plumber</h4></a>
+      <a href="location"><h4 id="text-71">Roofer</h4> </a>
+      <a href="location"><h4 id="text-81">Welder</h4></a>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p41.png" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">ABC PLUMBEING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><img src="/images/constraction/phone.png" width="20px" alt="location-icon"><small>Phone Number:+151051510510</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description:Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">15 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p12.png" class="card-img-top" alt=""width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">DEF PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 30,000$ -50,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description:️ Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">16 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p41.png " class="card-img-top" alt=""width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">GHI PLUMBING SERVICE</h6>
+        <span><img src="" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description:Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">19 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+  </div>
+</div><br/><br/>
+<div class="conainer w">
+  <center> <h5><img src="/images/constraction/location.png" width="20px" alt="location-icon">Cedar Rapids</h5></center> <br/><br/>
+  <div class="row">
+
+    <div class="card col-md-2">
+      <p> Active Job By Role</p>
+      <a href="location"><h4 id="text-12">Carpenter</h4> </a>
+      <a href="location"><h4 id="text-22">Constructor</h4></a>
+      <a href="location"><h4 id="text-32">Electricans</h4> </a>
+      <a href="location"><h4 id="text-42">Gardener</h4></a>
+      <a href="location"><h4 id="text-52">Painter</h4> </a>
+      <a href="location"><h4 id="text-62">Plumber</h4></a>
+      <a href="location"><h4 id="text-72">Roofer</h4> </a>
+      <a href="location"><h4 id="text-82">Welder</h4></a>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p45.jpeg" class="card-img-top" alt=""width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">JKL PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description:️ Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">21 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p12.png" class="card-img-top" alt=""width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">MNO PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description:️ Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">21 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p45.jpeg" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">PQR PLUMBING SERVICE  </h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description: Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">22 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+      </div>
+    </div>
+  </div>
+</div><br/><br/>
+<div class="conainer d">
+  <center> <h5><img src="/images/constraction/location.png" width="20px" alt="location-icon"> Sionux City</h5></center><br/><br/>
+  <div class="row">
+    <div class="card col-md-2">
+      <p> Active Job By Role</p>
+      <a href="location"><h4 id="text-13">Carpenter</h4> </a>
+      <a href="location"><h4 id="text-23">Constructor</h4></a>
+      <a href="location"><h4 id="text-33">Electricans</h4> </a>
+      <a href="location"><h4 id="text-44">Gardener</h4></a>
+      <a href="location"><h4 id="text-55">Painter</h4> </a>
+      <a href="location"><h4 id="text-66">Plumber</h4></a>
+      <a href="location"><h4 id="text-77">Roofer</h4> </a>
+      <a href="location"><h4 id="text-88">Welder</h4></a>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p48.jpeg" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">STU PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small>☑️ Job Description:Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">13 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p12.png" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">XYZ PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description:️ Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">17 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p48.jpeg" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">AAA PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description: Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">13 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+      </div>
+    </div>
+  </div>
+</div><br/><br/>
+<div class="conainer ngong ">
+  <center><img src="/images/constraction/location.png" width="20px" alt="location-icon">Davenport </center><br/><br/>
+  <div class="row">
+    <div class="card col-md-2">
+      <p> Active Job By Role</p>
+      <a href="location"><h4 id="text-18">Carpenter</h4> </a>
+      <a href="location"><h4 id="text-28">Constructor</h4></a>
+      <a href="location"><h4 id="text-38">Electricans</h4> </a>
+      <a href="location"><h4 id="text-48">Gardener</h4></a>
+      <a href="location"><h4 id="text-58">Painter</h4> </a>
+      <a href="location"><h4 id="text-68">Plumber</h4></a>
+      <a href="location"><h4 id="text-78">Roofer</h4> </a>
+      <a href="location"><h4 id="text-889">Welder</h4></a>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p49.png" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">BBB PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small>☑️ Job Description:️ Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">10 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p12.png" class="card-img-top" alt="" width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">CCC PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small>Hey I am Robert and .  is my profession </small><br><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description: Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">13 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <img src="/images/plumber/p49.png" class="card-img-top" alt=""  width="50px" height="150px">
+      <div class="card-body">
+        <h6 class="card-header">DDD PLUMBING SERVICE</h6>
+        <span><img src="/images/constraction/info.png" width="20px" alt="location-icon">About</span><br>
+        <small> Professional plumbing  Service requires a set of unique skills and knowledge that come more naturally.</small><br>
+        <h6><small>💼 1 - 4  years </small></h6><br>
+        <h6><small>💸 50,000$ -60,000$ yearly</small></h6><br>
+        <h6><img src="/images/constraction/mail.svg" width="20px" alt="location-icon"><small>Email:somebody@gmail.com</small> </h6><br>
+        <h6><img src="/images/constraction/adress.svg" width="20px" alt="location-icon"><small>Address:3094-00200</small></h6><br>
+        <small> ☑️ Job Description: Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures in commercial and residential structures. </small>
+        <p><a class="btn btn2 btn-light " href="locationId">13 days ago</a><img src="/images/plumber/share.svg" width="20px" alt="location-icon">  ♡ <a class="btn btn2 btn-primary " href="locationId">Qucik Apply</a> </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+
+</html>

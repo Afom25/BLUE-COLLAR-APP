@@ -1,5 +1,3 @@
-
-
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Meta tags -->
@@ -70,11 +68,11 @@
 
             </div>
         </div>
-        <div class="container">
+
             <table class="table">
                 <thead class = "thead-light">
                 <tr>
-                    <th class="text-left"> Vote👤 </th>
+
                     <th class="text-left">User 👤</th>
                     <th class="text-left">Job title ☑</th>
                     <th class="text-left">Location 📍</th>
@@ -87,9 +85,7 @@
                 <tbody>
 
                 <tr>
-                    <td><h7> 0 votes </h7><br/>
-                        <h7> 0 answers </h7><br/>
-                        <h7> 4 views </h7><br/></td>
+
                     <td> User1 </td>
                     <td> Plumber </td>
                     <td > Iowa,FA</td>
@@ -98,9 +94,7 @@
                     <td><a href="registrationForm" class="btn btn-info" role="button"> Apply✅</a></td>
                 </tr>
                 <tr>
-                    <td><h7> 1 votes </h7><br/>
-                        <h7> 3 answers </h7><br/>
-                        <h7> 7 views </h7><br/></td>
+
                     <td>Hidri</td>
                     <td> Welder </td>
                     <td > Ottuma,IA</td>
@@ -109,7 +103,7 @@
                     <td><a href="registrationForm" class="btn btn-info" role="button"> Apply✅</a></td>
                 </tr>
                 <tr th:each="jobb: ${listjob}">
-                    <td >[[${jobb.user}]]</td>
+
                     <td >[[${jobb.user}]]</td>
                     <td >[[${jobb.jobTitle}]]</td>
                     <td >[[${jobb.location}]]</td>
@@ -121,7 +115,7 @@
                 </tbody>
             </table>
             <hr/>
-        </div>
+
         <div class="row">
 
 
@@ -131,7 +125,7 @@
             </div>
             <div class="col-md-2">
 
-                </div>
+            </div>
 
             <div class="col-md-7">
                 <form  method="post" th:action="@{/job}" th:object="${job}">
