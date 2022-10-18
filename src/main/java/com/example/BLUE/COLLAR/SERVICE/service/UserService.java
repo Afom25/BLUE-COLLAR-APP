@@ -1,5 +1,6 @@
 package com.example.BLUE.COLLAR.SERVICE.service;
 
+import com.example.BLUE.COLLAR.SERVICE.model.Job;
 import com.example.BLUE.COLLAR.SERVICE.model.User;
 
 import com.example.BLUE.COLLAR.SERVICE.repository.UserRepository;
@@ -11,9 +12,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
+    public List<User> getAllUsers() {
+        return userRepository.findAll().stream().limit(20).collect(Collectors.toList());
+    }
     @Autowired
     private UserRepository userRepository;
 

@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class JobService {
     public List<Job> getAllJobs() {
-        return repo.findAll().stream().limit(10).collect(Collectors.toList());
+        return repo.findAll().stream().limit(20).collect(Collectors.toList());
     }
 
     @Autowired
