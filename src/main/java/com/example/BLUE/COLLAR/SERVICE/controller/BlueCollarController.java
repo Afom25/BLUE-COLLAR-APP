@@ -202,8 +202,6 @@ public class BlueCollarController {
 		return new ModelAndView(viewName, model);
 	}
 
-
-
 	@GetMapping("/home")
 	public ModelAndView showIndex() {
 		String viewName = "home";
@@ -211,8 +209,16 @@ public class BlueCollarController {
 		return new ModelAndView(viewName, model);
 	}
 
-
+	@GetMapping("/permemium")
+	public ModelAndView getPermemium() {
+		String viewName = "permemium";
+		Map<String, Object> model = new HashMap<String, Object>();
+		return new ModelAndView(viewName, model);
 	}
+
+
+
+}
 
 
 

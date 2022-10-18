@@ -1,0 +1,72 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>BlueCollar App</title>
+    <script defer src="/js/app.js"></script>
+</head>
+
+<body>
+<nav class = "navbar navbar-expand-sm navbar-dark bg-secondary">
+    <a class = "navbar-brand" href = "/">BlueCollar App</a>
+    <button class = "navbar-toggler" type = "button" data-toggle = "collapse"
+            data-target = "#navbarSupportedContent"
+            aria-controls = "navbarSupportedContent" aria-expanded = "false"
+            aria-label = "Toggle navigation">
+        <span class = "navbar-toggler-icon"></span>
+    </button>
+</nav>
+<div class="container">
+
+    <div class="container-fluid main">
+        <div class=" main overlay2">
+            <div class="container login">
+
+                <center> <img th:src="@{/images/logo.png}" alt="" width="300px"></center>
+                <center><h6>If the workers of the world want to win, all they have to do is recognize their own solidarity</h6></center>
+                <h3 class="login-heading">Sign Up Permemium</h3>
+                <p>Welcome back! Please fill the form to get Services</p>
+                <div class="form">
+                    <form  method="post" th:action="@{/signup}" th:object="${user}">
+
+                        <div class="form-group">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" class="form-control "  id="firstname" th:field="*{firstname}" >
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" class="form-control" id="lastname" th:field="*{lastname}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control "  id="email" th:field="*{email}">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control "  id="password" th:field="*{password}">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Confirm Password</label>
+                            <input type="password" class="form-control password"  id="confirmpassword" th:field="*{confirmpassword}">
+                        </div>
+                        <button type="submit" class=" btn btn-black btn-block"  id="login">Sign Up</button>
+                    </form>
+                    <br>
+                    <div class="signo">
+                        <a href="permemium"><small id="info">Have an Account?</small></a>
+                    </div>
+                </div>
+            </div>
+            <div class="icons">
+                <img src="/images/facebook.png" alt="">
+                <img src="/images/g_plus.png" alt="">
+                <img src="/images/skype.png" alt="">
+                <img src="/images/twitter.png" alt="">
+                <img src="/images/you_tube.png" alt="">
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

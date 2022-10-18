@@ -1,6 +1,7 @@
 package com.example.BLUE.COLLAR.SERVICE.controller;
 
 import com.example.BLUE.COLLAR.SERVICE.model.Job;
+import com.example.BLUE.COLLAR.SERVICE.model.User;
 import com.example.BLUE.COLLAR.SERVICE.service.JobService;
 import com.example.BLUE.COLLAR.SERVICE.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ import java.util.List;
         private UserService userService;
 
         @GetMapping(value="/users")
-        public List<Job> displayUsers(){
-            return userService.getAllJobs();
+        public List<User> displayUsers(){
+            return userService.getAllUsers();
         }
     }
 
