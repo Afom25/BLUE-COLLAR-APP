@@ -9,10 +9,14 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 
 public class JobService {
+    public List<Job> getAllJobs() {
+        return repo.findAll().stream().limit(10).collect(Collectors.toList());
+    }
 
     @Autowired
     private BlueRepository repo;
@@ -25,5 +29,6 @@ public class JobService {
         return repo.save(job);
 
     }
+
 
 }

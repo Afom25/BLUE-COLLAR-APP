@@ -13,6 +13,8 @@ public interface BlueRepository extends JpaRepository<Job,Long> {
     @Query(value = "select j from Job as j where j.location=?1")
     User findBylocation(String location);
 
+
+
 //    List<Job> findbyLocation(String location);
 //    List<Job> findJobByDatepostAnd
 
