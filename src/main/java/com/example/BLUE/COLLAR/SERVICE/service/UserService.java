@@ -26,6 +26,9 @@ public class UserService {
         return  userRepository.findAll();
 
     }
+//    public List<User> byLastname(String first){
+//        return userRepository.findUserByLastname(first);
+//    }
     public void save(User user){
         System.out.println(user.toString());
          userRepository.save(user);

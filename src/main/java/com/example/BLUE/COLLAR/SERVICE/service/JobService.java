@@ -3,6 +3,7 @@ package com.example.BLUE.COLLAR.SERVICE.service;
 
 import com.example.BLUE.COLLAR.SERVICE.model.Job;
 //import com.example.BLUE.COLLAR.SERVICE.repository.BlueRepository;
+import com.example.BLUE.COLLAR.SERVICE.model.User;
 import com.example.BLUE.COLLAR.SERVICE.repository.BlueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,15 @@ public class JobService {
 
     }
 
+    public List<Job> byjobtitle(String first){
+        return repo.findJobBy(first);
+    }
 
+    public List<Job> byjoblocation(String second) {
+        return repo.getlocation(second);
+    }
+
+    public List<Job> byjobUser(String third) {
+        return repo.getJobUsers(third);
+    }
 }

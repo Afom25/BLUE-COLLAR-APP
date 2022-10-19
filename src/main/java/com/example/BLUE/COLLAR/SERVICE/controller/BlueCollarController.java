@@ -24,7 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class BlueCollarController {
 	@Autowired
-	private JobService service;
+	private JobService jobService;
 	@Autowired
 	private UserService userService;
 
@@ -58,7 +58,7 @@ public class BlueCollarController {
 
 	@PostMapping("/add/job")
 	public Job save(@RequestBody Job job) {
-		return service.save(job);
+		return jobService.save(job);
 	}
 
 	@RequestMapping("/service")
@@ -102,7 +102,7 @@ public class BlueCollarController {
 		String viewName = "job";
 		Job job = new Job();
 		model.addAttribute("job", job);
-		List<Job> allJobs = service.listAll();
+		List<Job> allJobs = jobService.listAll();
 		model.addAttribute("listjob", allJobs);
 		return new ModelAndView(viewName);
 	}
@@ -114,10 +114,10 @@ public class BlueCollarController {
 		String viewName = "job";
 		//Map<String,Object> model = new HashMap<String,Object>();
 		//model.put("bluelistItems", new BlueCollarItem());
-		List<Job> allJobs = service.listAll();
+		List<Job> allJobs = jobService.listAll();
 		//System.out.println(allJobs);
 		model.addAttribute("listjob", allJobs);
-		service.save(job);
+		jobService.save(job);
 		return new ModelAndView(viewName);
 	}
 
@@ -154,6 +154,7 @@ public class BlueCollarController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		return new ModelAndView(viewName, model);
 	}
+
 
 	@GetMapping("/registrationForm")
 	public ModelAndView showRegsistration() {
@@ -201,6 +202,13 @@ public class BlueCollarController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		return new ModelAndView(viewName, model);
 	}
+	@GetMapping("/payment")
+	public ModelAndView getPayment() {
+		String viewName = "payment";
+		Map<String, Object> model = new HashMap<String, Object>();
+		return new ModelAndView(viewName, model);
+	}
+
 
 	@GetMapping("/home")
 	public ModelAndView showIndex() {
@@ -208,17 +216,28 @@ public class BlueCollarController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		return new ModelAndView(viewName, model);
 	}
+	@RequestMapping("/job/byjobtitle/{first}")
+		public List<Job> byjobtitle(@PathVariable(value="first") String first) {
+			return jobService.byjobtitle(first);
 
-	@GetMapping("/permemium")
-	public ModelAndView getPermemium() {
-		String viewName = "permemium";
-		Map<String, Object> model = new HashMap<String, Object>();
-		return new ModelAndView(viewName, model);
+		}
+
+		@RequestMapping("/job/byjoblocation/{second}")
+	     public List<Job> byjoblocation(@PathVariable(value="second") String second){
+		return jobService.byjoblocation(second);
+		}
+	@RequestMapping("/job/byjobUser/{third}")
+	public List<Job> byjobUser(@PathVariable(value="third") String third){
+		return jobService.byjobUser(third);
+	}
+
 	}
 
 
 
-}
+
+
+
 
 
 
