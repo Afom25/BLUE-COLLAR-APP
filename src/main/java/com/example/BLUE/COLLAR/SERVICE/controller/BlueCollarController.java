@@ -219,7 +219,6 @@ public class BlueCollarController {
 	@RequestMapping("/job/byjobtitle/{first}")
 		public List<Job> byjobtitle(@PathVariable(value="first") String first) {
 			return jobService.byjobtitle(first);
-
 		}
 
 		@RequestMapping("/job/byjoblocation/{second}")
@@ -230,7 +229,6 @@ public class BlueCollarController {
 	public List<Job> byjobUser(@PathVariable(value="third") String third){
 		return jobService.byjobUser(third);
 	}
-
 	}
 
 

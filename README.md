@@ -12,6 +12,9 @@ Project is created with:
 * MySQL 
 * Javascript 
 * Thymleaf
+* HTML/CSS
+* DOCKER
+
 ### Member of Teams 
 
 * Antenio S.  Michael 
