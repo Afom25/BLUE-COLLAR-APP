@@ -17,8 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.authentication.AuthenticationManager;
 //import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 @RestController
 
@@ -122,12 +125,20 @@ public class BlueCollarController {
 	}
 
 	@PostMapping("/signup")
-	public ModelAndView handleformUser(User user) {
+	public ModelAndView handleformUser(@Valid User user, BindingResult bindingResult) {
 		System.out.println(user.toString());
 		jobApplies.add(user);
 		String viewName = "login";
 		userService.save(user);
+		ModelAndView mav = new ModelAndView();
 
+		if(bindingResult.hasErrors()){
+			mav.setViewName("signup");
+			return new ModelAndView(viewName);
+
+		}
+         mav.addObject("User",user);
+		mav.setViewName("success");
 		//	model.addAttribute("users",users);
 		return new ModelAndView(viewName);
 	}

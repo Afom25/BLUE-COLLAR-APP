@@ -2,10 +2,21 @@ package com.example.BLUE.COLLAR.SERVICE.model;
 
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Data
+
 
 public class User {
     @Id
@@ -13,11 +24,14 @@ public class User {
     private Long id;
     @Column(unique=true)
     @NotNull
-
+    @Size(min=2,max=30)
     private String firstname;
-
+    @NotNull
+    @Size(min=2,max=30)
     private String lastname;
+    @Size(min=2,max=30)
     private String email;
+    @Size(min=2,max=30)
     private String password;
     @Transient
     private String confirmpassword;
@@ -31,9 +45,9 @@ public class User {
         this.confirmpassword = confirmpassword;
     }
 
-    public User() {
-
-    }
+//    public User() {
+//
+//    }
 
     public Long getId() {
         return id;
