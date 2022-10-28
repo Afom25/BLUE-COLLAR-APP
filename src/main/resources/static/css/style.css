@@ -6,6 +6,9 @@
     background: url(../images/logo.png)no-repeat center center/cover;
     height: 100vh;
 }
+span.errorMsg{
+    color:red;
+}
 
 .hidri{
     position: absolute;

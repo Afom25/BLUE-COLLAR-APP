@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -23,15 +24,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique=true)
-    @NotNull
+    @NotBlank(message="first cant be blank or empty")
     @Size(min=2,max=30)
     private String firstname;
-    @NotNull
+    @NotBlank(message="lastname cant be blank or empty")
     @Size(min=2,max=30)
+    @Column(nullable = false)
     private String lastname;
     @Size(min=2,max=30)
+    @NotBlank(message="email cant be blank or empty")
+    @Column(nullable = false)
     private String email;
     @Size(min=2,max=30)
+    @Column(nullable = false)
     private String password;
     @Transient
     private String confirmpassword;

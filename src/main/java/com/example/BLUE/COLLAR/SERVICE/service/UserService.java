@@ -33,8 +33,14 @@ public class UserService {
         System.out.println(user.toString());
          userRepository.save(user);
 
-
     }
+
+
+    public User registerNewUser(User user){
+        return userRepository.save(user);
+    }
+
+
 
 //    @Override
 //    public UserDetails loadUserByUsername(String firstname) throws UsernameNotFoundException {

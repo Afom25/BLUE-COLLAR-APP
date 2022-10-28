@@ -227,6 +227,18 @@ public class BlueCollarController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		return new ModelAndView(viewName, model);
 	}
+	@GetMapping(value={"/signup/new"})
+	public String registerNewUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult,Model model){
+		if(bindingResult.hasErrors()){
+			model.addAttribute("patient",user);
+			model.addAttribute("errors", bindingResult.getAllErrors());
+			return "signup";
+		}
+		userService.registerNewUser(user);
+		return "redirect:/home";
+
+
+	}
 	@RequestMapping("/job/byjobtitle/{first}")
 		public List<Job> byjobtitle(@PathVariable(value="first") String first) {
 			return jobService.byjobtitle(first);

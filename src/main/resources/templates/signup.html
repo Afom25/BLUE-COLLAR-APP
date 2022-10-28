@@ -28,27 +28,36 @@
       <p>Welcome back! Please fill the form to get Services</p>
       <div class="form">
           <form  method="post" th:action="@{/signup}" th:object="${user}">
-
+<!--              <form action ="/login" method="post" th:object="${user}">-->
+              <div>
+                  <span> Fields marked with aterisks(*) are required.</span>
+              </div>
           <div class="form-group">
-            <label for="firstname">Firstname</label>
-            <input type="text" class="form-control "  id="firstname" th:field="*{firstname}" >
+            <label for="firstname">Firstname*</label>
+              <div>
+                  <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" class="errorMsg"> </span>
+              </div>
+            <input type="text" class="form-control "  id="firstname" th:field="*{firstname}" required >
           </div>
             <div class="form-group">
-                <label for="lastname">Lastname</label>
+                <label for="lastname">Lastname*</label>
                 <input type="text" class="form-control" id="lastname" th:field="*{lastname}">
             </div>
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
             <input type="text" class="form-control "  id="email" th:field="*{email}">
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Password*</label>
             <input type="password" class="form-control "  id="password" th:field="*{password}">
           </div>
           <div class="form-group">
             <label for="password">Confirm Password</label>
             <input type="password" class="form-control password"  id="confirmpassword" th:field="*{confirmpassword}">
           </div>
+<!--              <div>-->
+<!--                  <input type="submit" value="Register User">-->
+<!--              </div>-->
           <button type="submit" class=" btn btn-black btn-block"  id="login">Sign Up</button>
         </form>
         <br>
