@@ -21,5 +21,5 @@ Project is created with:
 * Daniel  S . Iga 
 * Hidri A.  Ghebretinsae 
 
-
+  <img src="/images/blue.jpeg" width="400px" alt="blue image" class="rounded-circle teamimages">
 
