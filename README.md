@@ -1,10 +1,11 @@
 # BlueCollar Application
 
-BlueCollar Application is an app where a blue collar workers car register themselves, get their credntinals verified and get listed for listed potential clients to hire them. Users(client) who needs log into the application and get to choose the prefered worker according their preference.
+The BlueCollar Application is a platform which helps the BlueCollar workers meet their clients at a minimum cost which reduces the cost of advertising and help drive business for the blue collar workers. The application at the same time makes it easy for the customers/clients to contact the service providers at the snap of a finger in the comfort of their homes or offices.
+
 ## Setup 
  ``` Using Spring boot MVC```
-
-
+ 
+/Users/hidrighebretinsae/Desktop/BLUE-COLLAR-SERVICE-SPRING-BOOT/src/main/resources/static/images/springbootimages.png
 
 ## Technologies
 Project is created with:
