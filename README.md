@@ -5,7 +5,7 @@ The BlueCollar Application is a platform which helps the BlueCollar workers meet
 ## Setup 
  ``` Using Spring boot MVC```
  
-/Users/hidrighebretinsae/Desktop/BLUE-COLLAR-SERVICE-SPRING-BOOT/src/main/resources/static/images/springbootimages.png
+
 
 ## Technologies
 Project is created with:
