@@ -21,5 +21,4 @@ Project is created with:
 * Daniel  S . Iga 
 * Hidri A.  Ghebretinsae 
 
-  <img src="![blue2](https://user-images.githubusercontent.com/61077137/198677915-0018dc2b-d654-42a9-bdbb-ab82ff832d96.jpeg)" width="400px" alt="blue image" class="rounded-circle teamimages">
-
+ ![blue2](https://user-images.githubusercontent.com/61077137/198677915-0018dc2b-d654-42a9-bdbb-ab82ff832d96.jpeg)
